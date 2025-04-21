@@ -1,0 +1,82 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: es\n"
+
+msgid "Home"
+msgstr "Inicio"
+
+msgid "Services"
+msgstr "Servicios"
+
+msgid "Our Team"
+msgstr "Nuestro equipo"
+
+msgid "Gallery"
+msgstr "Galería"
+
+msgid "Contact"
+msgstr "Contacto"
+
+msgid "Book Now"
+msgstr "Reservar"
+
+msgid "Full Name"
+msgstr "Nombre completo"
+
+msgid "Email"
+msgstr "Correo electrónico"
+
+msgid "Phone"
+msgstr "Teléfono"
+
+msgid "Service"
+msgstr "Servicio"
+
+msgid "Hair Styling"
+msgstr "Peinado"
+
+msgid "Nail Art"
+msgstr "Manicura"
+
+msgid "Spa Treatments"
+msgstr "Tratamientos de spa"
+
+msgid "Booking submitted successfully! We will contact you soon."
+msgstr "¡Reserva enviada con éxito! Nos pondremos en contacto contigo."
+
+msgid "Please fill out all fields correctly."
+msgstr "Por favor, completa todos los campos correctamente."
+
+msgid "Discover the art of self-care in a luxurious environment where beauty knows no bounds. Embrace the beauty you deserve, only at The Beauty House."
+msgstr "Descubre el arte del cuidado personal en un entorno lujoso donde la belleza no tiene límites. Disfruta de la belleza que mereces, solo con nosotros."
+
+msgid "TOP STYLIST"
+msgstr "ESTILISTA PRINCIPAL"
+
+msgid "TOP COLORIST"
+msgstr "COLORISTA PRINCIPAL"
+
+msgid "TOP COLORIST | CREATOR OF DISTINCTIVE SHADES"
+msgstr "COLORISTA PRINCIPAL | CREADOR DE TONOS DISTINTIVOS"
+
+msgid "TOP COLORIST OF COMPLEX TECHNIQUES"
+msgstr "COLORISTA PRINCIPAL DE TÉCNICAS COMPLEJAS"
+
+msgid "COLORIST OF COMPLEX TECHNIQUES"
+msgstr "COLORISTA DE TÉCNICAS COMPLEJAS"
+
+msgid "STYLIST"
+msgstr "ESTILISTA"
+
+msgid "TOP MANICURE MASTERS"
+msgstr "MAESTROS DE MANICURA DE PRIMER NIVEL"
+
+msgid "MASSAGE THERAPIST"
+msgstr "TERAPEUTA DE MASAJE"
+
+msgid "MAKEUP ARTIST"
+msgstr "MAQUILLADOR"
+
+msgid "ADMINISTRATOR"
+msgstr "ADMINISTRADORA"

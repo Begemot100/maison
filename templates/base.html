@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="{{ g.get('locale', 'en') }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maison Beauty Salon</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/btn.css') }}">
+
+  <!-- Alpine.js -->
+  <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+</head>
+
+<body class="font-roboto text-gray-800">
+  <!-- Header -->
+  <header class="bg-white shadow fixed w-full z-10">
+    <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <div class="text-2xl font-playfair font-medium text-gray-500 uppercase">Maison Beauty Space</div>
+
+      <ul class="hidden md:flex space-x-6">
+        <li><a href="#home" class="hover:text-pink-600 transition">{{ _('Home') }}</a></li>
+        <li><a href="#services" class="hover:text-pink-600 transition">{{ _('Services') }}</a></li>
+        <li><a href="#about" class="hover:text-pink-600 transition">{{ _('Our Team') }}</a></li>
+        <li><a href="#gallery" class="hover:text-pink-600 transition">{{ _('Gallery') }}</a></li>
+        <li><a href="#contact" class="hover:text-pink-600 transition">{{ _('Contact') }}</a></li>
+      </ul>
+
+      <!-- Language Switcher -->
+      <div class="hidden md:flex space-x-2 items-center">
+        <a href="?lang=en" class="w-8 h-6 bg-[url('/static/flags/gb.svg')] bg-cover rounded-sm border border-gray-300 shadow-sm hover:scale-105 hover:ring-2 ring-pink-300 transition duration-300"></a>
+        <a href="?lang=ru" class="w-8 h-6 bg-[url('/static/flags/ru.svg')] bg-cover rounded-sm border border-gray-300 shadow-sm hover:scale-105 hover:ring-2 ring-pink-300 transition duration-300"></a>
+        <a href="?lang=es" class="w-8 h-6 bg-[url('/static/flags/es.svg')] bg-cover rounded-sm border border-gray-300 shadow-sm hover:scale-105 hover:ring-2 ring-pink-300 transition duration-300"></a>
+      </div>
+
+      <!-- Burger -->
+      <button class="md:hidden focus:outline-none" onclick="toggleMenu()">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="hidden bg-white shadow-md">
+      <ul class="flex flex-col items-center py-4 space-y-4">
+        <li><a href="#home" class="hover:text-pink-600 transition" onclick="toggleMenu()">{{ _('Home') }}</a></li>
+        <li><a href="#services" class="hover:text-pink-600 transition" onclick="toggleMenu()">{{ _('Services') }}</a></li>
+        <li><a href="#about" class="hover:text-pink-600 transition" onclick="toggleMenu()">{{ _('Our Team') }}</a></li>
+        <li><a href="#gallery" class="hover:text-pink-600 transition" onclick="toggleMenu()">{{ _('Gallery') }}</a></li>
+        <li><a href="#contact" class="hover:text-pink-600 transition" onclick="toggleMenu()">{{ _('Contact') }}</a></li>
+      </ul>
+      <div class="flex justify-center space-x-4 mt-4 pb-4">
+        <a href="?lang=en" class="w-8 h-6 bg-[url('/static/flags/gb.svg')] bg-cover rounded-sm border border-gray-300 shadow-sm hover:scale-105 hover:ring-2 ring-pink-300 transition duration-300"></a>
+        <a href="?lang=ru" class="w-8 h-6 bg-[url('/static/flags/ru.svg')] bg-cover rounded-sm border border-gray-300 shadow-sm hover:scale-105 hover:ring-2 ring-pink-300 transition duration-300"></a>
+        <a href="?lang=es" class="w-8 h-6 bg-[url('/static/flags/es.svg')] bg-cover rounded-sm border border-gray-300 shadow-sm hover:scale-105 hover:ring-2 ring-pink-300 transition duration-300"></a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="pt-20">
+    {% block content %}{% endblock %}
+  </main>
+
+  <!-- Modal Component (Team Member) -->
+  <div
+    x-data="{ showModal: false, selectedMember: null, members: {{ team_members|tojson }} }"
+    x-init="$watch('showModal', val => { if (!val) selectedMember = null })"
+    x-cloak
+  >
+    <div
+      class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-60 z-50 px-4"
+      x-show="showModal"
+      x-transition
+      @click.outside="showModal = false"
+    >
+      <div class="bg-white p-6 rounded-xl max-w-lg w-full relative shadow-xl">
+        <button class="absolute top-2 right-3 text-gray-400 hover:text-black text-2xl" @click="showModal = false">×</button>
+        <template x-if="selectedMember">
+          <div>
+            <img :src="'/static/' + selectedMember.photo" alt="" class="w-28 h-28 rounded-full mx-auto mb-4 object-cover shadow-md">
+            <h3 class="text-xl font-bold text-center mb-1" x-text="selectedMember.name"></h3>
+            <p class="text-sm text-center text-gray-500 mb-4" x-text="selectedMember.position"></p>
+            <p class="text-sm text-gray-700 leading-relaxed text-center" x-text="selectedMember.description"></p>
+          </div>
+        </template>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-8 mt-16">
+    <div class="container mx-auto px-4 text-center">
+      <p>© 2025 Maison Beauty Space. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('hidden');
+    }
+
+    function openModal(id) {
+      const el = document.querySelector('[x-data]');
+      const data = Alpine.evaluate(el, 'members');
+      const member = data.find(m => m.id === id);
+      Alpine.mutate(el, 'selectedMember', () => member);
+      Alpine.mutate(el, 'showModal', () => true);
+    }
+  </script>
+</body>
+</html>

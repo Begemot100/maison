@@ -1,0 +1,82 @@
+/* Пользовательские стили */
+.custom-hover:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+/* Адаптивный фон для Hero */
+.hero-bg {
+  background-image: url('../images/mob1.jpg');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Затемнение */
+.hero-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3); /* Уменьшаем затемнение */
+  z-index: 1;
+}
+
+/* Мобильные устройства (≤ 767px) */
+@media (max-width: 767px) {
+  .hero-bg {
+    background-image: url('../images/mob1.jpeg');
+    background-size: contain;
+    background-position: center top 10%; /* Фокус на вывеске */
+    background-attachment: scroll;
+    min-height: 80vh; /* Увеличиваем высоту, чтобы текст был ниже */
+  }
+
+  /* Текстовая область */
+  .hero-bg > div {
+    padding-top: 40vh; /* Смещаем текст вниз, как на скриншоте */
+  }
+}
+
+/* Очень маленькие экраны (≤ 479px, например, iPhone SE) */
+@media (max-width: 479px) {
+  .hero-bg {
+    background-size: contain;
+    background-position: center top 8%;
+    min-height: 75vh;
+  }
+
+  .hero-bg > div {
+    padding-top: 35vh;
+  }
+}
+
+/* Более высокие экраны (например, iPhone 14 Pro, > 667px высота) */
+@media (max-width: 767px) and (min-height: 667px) {
+  .hero-bg {
+    background-size: contain;
+    background-position: center top 5%;
+    min-height: 85vh;
+  }
+
+  .hero-bg > div {
+    padding-top: 45vh;
+  }
+}
+
+/* Для очень узких экранов с высоким соотношением (например, 9:20) */
+@media (max-width: 767px) and (min-aspect-ratio: 9/20) {
+  .hero-bg {
+    background-size: contain;
+    background-position: center top 9%;
+    min-height: 90vh;
+  }
+
+  .hero-bg > div {
+    padding-top: 50vh;
+  }
+}

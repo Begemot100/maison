@@ -1,0 +1,83 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: ru\n"
+
+msgid "Home"
+msgstr "Главная"
+
+msgid "Services"
+msgstr "Услуги"
+
+msgid "Our Team"
+msgstr "Команда"
+
+msgid "Gallery"
+msgstr "Галерея"
+
+msgid "Contact"
+msgstr "Контакты"
+
+msgid "Book Now"
+msgstr "Записаться"
+
+msgid "Full Name"
+msgstr "Имя и фамилия"
+
+msgid "Email"
+msgstr "Эл. почта"
+
+msgid "Phone"
+msgstr "Телефон"
+
+msgid "Service"
+msgstr "Услуга"
+
+msgid "Hair Styling"
+msgstr "Парикмахерские услуги"
+
+msgid "Nail Art"
+msgstr "Маникюр"
+
+msgid "Spa Treatments"
+msgstr "Спа процедуры"
+
+msgid "Booking submitted successfully! We will contact you soon."
+msgstr "Запись успешно отправлена! Мы свяжемся с вами."
+
+msgid "Please fill out all fields correctly."
+msgstr "Пожалуйста, заполните все поля правильно."
+
+msgid "Discover the art of self-care in a luxurious environment where beauty knows no bounds. Embrace the beauty you deserve, only at The Beauty House."
+msgstr "Откройте для себя искусство заботы о себе в роскошной обстановке, где красота не знает границ. Почувствуйте красоту, которую вы заслуживаете — только у нас."
+
+msgid "TOP STYLIST"
+msgstr "ТОП-СТИЛИСТ"
+
+msgid "TOP COLORIST"
+msgstr "ТОП-КОЛОРИСТ"
+
+msgid "TOP COLORIST | CREATOR OF DISTINCTIVE SHADES"
+msgstr "ТОП КОЛОРИСТ | СОЗДАТЕЛЬ УНИКАЛЬНЫХ ОТТЕНКОВ"
+
+msgid "TOP COLORIST OF COMPLEX TECHNIQUES"
+msgstr "ТОП КОЛОРИСТ СЛОЖНЫХ ТЕХНИК"
+
+msgid "COLORIST OF COMPLEX TECHNIQUES"
+msgstr "КОЛОРИСТ СЛОЖНЫХ ТЕХНИК"
+
+msgid "STYLIST"
+msgstr "СТИЛИСТ"
+
+msgid "TOP MANICURE MASTERS"
+msgstr "ТОПОВЫЙ МАСТЕР МАНИКЮРА"
+
+msgid "MASSAGE THERAPIST"
+msgstr "МАССАЖИСТ"
+
+msgid "MAKEUP ARTIST"
+msgstr "ВИЗАЖИСТ"
+
+msgid "ADMINISTRATOR"
+msgstr "АДМИНИСТРАТОР"
+
