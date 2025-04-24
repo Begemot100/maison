@@ -9,7 +9,7 @@ function galleryModal() {
         'images/portfolio/man1.jpeg',
         'images/portfolio/man2.PNG',
         'images/portfolio/man3.PNG',
-        'images/portfolio/man4.jpg',
+        'images/portfolio/man4.JPG',
         'images/portfolio/man5.JPG',
 
 
