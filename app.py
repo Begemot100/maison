@@ -15,7 +15,7 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'your-secret-key'
 app.config['BABEL_DEFAULT_LOCALE'] = 'en'
 babel = Babel(app)
-port = int(os.environ.get("PORT", 8000))
+# port = int(os.environ.get("PORT", 8000))
 
 LANGUAGES = ['en', 'ru', 'es']
 
@@ -243,4 +243,6 @@ def view_cart():
 
 
 if __name__ == '__main__':
+    port = int(os.environ.get("PORT", 8000))
+
     app.run(host="0.0.0.0", port=port, debug=True)
