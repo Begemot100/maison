@@ -1,3 +1,5 @@
+import os
+
 from flask import Flask, render_template, request, flash, redirect, url_for
 from flask_wtf import FlaskForm
 from wtforms import StringField, SelectField, SubmitField
@@ -7,7 +9,6 @@ import pandas as pd
 from flask import make_response
 from flask import session, jsonify
 
-import os
 import openpyxl
 
 app = Flask(__name__)
