@@ -9,24 +9,34 @@
   <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+<!--  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">-->
+  <link href="https://fonts.googleapis.com/css2?family=Cantata+One&display=swap" rel="stylesheet">
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/btn.css') }}">
+  <script>
+    window.translatedGallery = {{ translated_gallery | tojson }};
+  </script>
 
   <!-- Alpine.js -->
   <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  <script src="{{ url_for('static', filename='js/galleryModal.js') }}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js" defer></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+
+
 </head>
 
-<body class="font-roboto text-gray-800">
+<body class="font-[Cantata_One] text-gray-800">
   <!-- Header -->
   <header class="bg-white shadow fixed w-full z-10">
     <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
       <div class="text-2xl font-playfair font-medium text-gray-500 uppercase">Maison Beauty Space</div>
 
       <ul class="hidden md:flex space-x-6">
-        <li><a href="#home" class="hover:text-pink-600 transition">{{ _('Home') }}</a></li>
+<!--        <li><a href="#shop" class="hover:text-pink-600 transition">{{ _('Shop') }}</a></li>-->
         <li><a href="#services" class="hover:text-pink-600 transition">{{ _('Services') }}</a></li>
         <li><a href="#about" class="hover:text-pink-600 transition">{{ _('Our Team') }}</a></li>
         <li><a href="#gallery" class="hover:text-pink-600 transition">{{ _('Gallery') }}</a></li>
@@ -35,9 +45,9 @@
 
       <!-- Language Switcher -->
       <div class="hidden md:flex space-x-2 items-center">
-        <a href="?lang=en" class="w-8 h-6 bg-[url('/static/flags/gb.svg')] bg-cover rounded-sm border border-gray-300 shadow-sm hover:scale-105 hover:ring-2 ring-pink-300 transition duration-300"></a>
-        <a href="?lang=ru" class="w-8 h-6 bg-[url('/static/flags/ru.svg')] bg-cover rounded-sm border border-gray-300 shadow-sm hover:scale-105 hover:ring-2 ring-pink-300 transition duration-300"></a>
-        <a href="?lang=es" class="w-8 h-6 bg-[url('/static/flags/es.svg')] bg-cover rounded-sm border border-gray-300 shadow-sm hover:scale-105 hover:ring-2 ring-pink-300 transition duration-300"></a>
+        <a href="?lang=en" class="w-8 h-8 bg-[url('/static/flags/A.png')] bg-cover rounded-sm border border-gray-300 shadow-sm hover:scale-105 hover:ring-2 ring-pink-300 transition duration-300"></a>
+        <a href="?lang=ru" class="w-8 h-8 bg-[url('/static/flags/R.png')] bg-cover rounded-sm border border-gray-300 shadow-sm hover:scale-105 hover:ring-2 ring-pink-300 transition duration-300"></a>
+        <a href="?lang=es" class="w-8 h-8 bg-[url('/static/flags/E.png')] bg-cover rounded-sm border border-gray-300 shadow-sm hover:scale-105 hover:ring-2 ring-pink-300 transition duration-300"></a>
       </div>
 
       <!-- Burger -->
@@ -51,16 +61,16 @@
     <!-- Mobile menu -->
     <div id="mobileMenu" class="hidden bg-white shadow-md">
       <ul class="flex flex-col items-center py-4 space-y-4">
-        <li><a href="#home" class="hover:text-pink-600 transition" onclick="toggleMenu()">{{ _('Home') }}</a></li>
+        <li><a href="#shop" class="hover:text-pink-600 transition" onclick="toggleMenu()">{{ _('Shop') }}</a></li>
         <li><a href="#services" class="hover:text-pink-600 transition" onclick="toggleMenu()">{{ _('Services') }}</a></li>
         <li><a href="#about" class="hover:text-pink-600 transition" onclick="toggleMenu()">{{ _('Our Team') }}</a></li>
         <li><a href="#gallery" class="hover:text-pink-600 transition" onclick="toggleMenu()">{{ _('Gallery') }}</a></li>
         <li><a href="#contact" class="hover:text-pink-600 transition" onclick="toggleMenu()">{{ _('Contact') }}</a></li>
       </ul>
       <div class="flex justify-center space-x-4 mt-4 pb-4">
-        <a href="?lang=en" class="w-8 h-6 bg-[url('/static/flags/gb.svg')] bg-cover rounded-sm border border-gray-300 shadow-sm hover:scale-105 hover:ring-2 ring-pink-300 transition duration-300"></a>
-        <a href="?lang=ru" class="w-8 h-6 bg-[url('/static/flags/ru.svg')] bg-cover rounded-sm border border-gray-300 shadow-sm hover:scale-105 hover:ring-2 ring-pink-300 transition duration-300"></a>
-        <a href="?lang=es" class="w-8 h-6 bg-[url('/static/flags/es.svg')] bg-cover rounded-sm border border-gray-300 shadow-sm hover:scale-105 hover:ring-2 ring-pink-300 transition duration-300"></a>
+        <a href="?lang=en" class="w-8 h-7 bg-[url('/static/flags/en1.png')] bg-cover rounded-sm border border-gray-300 shadow-sm hover:scale-105 hover:ring-2 ring-pink-300 transition duration-300"></a>
+        <a href="?lang=ru" class="w-8 h-7 bg-[url('/static/flags/rus1.png')] bg-cover rounded-sm border border-gray-300 shadow-sm hover:scale-105 hover:ring-2 ring-pink-300 transition duration-300"></a>
+        <a href="?lang=es" class="w-8 h-7 bg-[url('/static/flags/es1.png')] bg-cover rounded-sm border border-gray-300 shadow-sm hover:scale-105 hover:ring-2 ring-pink-300 transition duration-300"></a>
       </div>
     </div>
   </header>
@@ -118,5 +128,7 @@
       Alpine.mutate(el, 'showModal', () => true);
     }
   </script>
+
+
 </body>
 </html>
