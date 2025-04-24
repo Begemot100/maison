@@ -21,10 +21,10 @@ function galleryModal() {
 
       ],
       'Lashes': [
-        'images/portfolio/brow.jpg',
-        'images/portfolio/brow1.jpg',
-        'images/portfolio/brow2.jpg',
-        'images/portfolio/brow3.jpg',
+        'images/portfolio/brow.JPG',
+        'images/portfolio/brow1.JPG',
+        'images/portfolio/brow2.JPG',
+        'images/portfolio/brow3.JPG',
 
 
       ],
