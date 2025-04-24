@@ -3,8 +3,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: ru\n"
 
-msgid "Home"
-msgstr "Главная"
+msgid "Shop"
+msgstr "Магазин"
 
 msgid "Services"
 msgstr "Услуги"
@@ -48,7 +48,7 @@ msgstr "Запись успешно отправлена! Мы свяжемся 
 msgid "Please fill out all fields correctly."
 msgstr "Пожалуйста, заполните все поля правильно."
 
-msgid "Discover the art of self-care in a luxurious environment where beauty knows no bounds. Embrace the beauty you deserve, only at The Beauty House."
+msgid "Discover the art of self-care in a luxurious environment where beauty knows no bounds. Embrace the beauty you deserve, only at Maison Beauty Space."
 msgstr "Откройте для себя искусство заботы о себе в роскошной обстановке, где красота не знает границ. Почувствуйте красоту, которую вы заслуживаете — только у нас."
 
 msgid "TOP STYLIST"
@@ -81,3 +81,71 @@ msgstr "ВИЗАЖИСТ"
 msgid "ADMINISTRATOR"
 msgstr "АДМИНИСТРАТОР"
 
+msgid "Manicure"
+msgstr "Маникюр"
+
+msgid "Pedicure"
+msgstr "Педикюр"
+
+msgid "Lashes"
+msgstr "Ресницы"
+
+msgid "Coloristic"
+msgstr "Колористика"
+
+msgid "Brows"
+msgstr "Брови"
+
+msgid "Clients"
+msgstr "Клиенты"
+
+msgid "At Maison Beauty Space, we blend luxury, professionalism, and care. Our mission is to help every client reveal their unique beauty through personalized treatments and a warm atmosphere."
+msgstr "В Maison Beauty Space мы объединяем роскошь, профессионализм и заботу. Наша миссия — помочь каждому клиенту раскрыть свою уникальную красоту с помощью персонализированных процедур и тёплой атмосферы."
+
+msgid "Prices for services"
+msgstr "Цены на услуги"
+
+msgid "Paquete de bienvenida solo nuevas clientes"
+msgstr "Пакет приветствия только для новых клиенток"
+
+msgid "Massage"
+msgstr "Массаж"
+
+msgid "Pedicure"
+msgstr "Педикюр"
+
+msgid "Manicure"
+msgstr "Маникюр"
+
+msgid "Cosmetology"
+msgstr "Косметология"
+
+msgid "Consultation"
+msgstr "Консультация"
+
+msgid "Hair"
+msgstr "Волосы"
+
+msgid "Makeup"
+msgstr "Макияж"
+
+msgid "Hair removal"
+msgstr "Депиляция"
+
+msgid "Endospheres"
+msgstr "Эндосфера"
+
+msgid "Eyelash extensions"
+msgstr "Наращивание ресниц"
+
+msgid "Welcome package for new clients"
+msgstr "Пакет для новых клиентов"
+
+msgid "First haircut + complimentary treatment"
+msgstr "Первый визит: стрижка + уход в подарок"
+
+msgid "First endospheres session"
+msgstr "Первая процедура эндосферы"
+
+msgid "First manicure with permanent polish"
+msgstr "Первая маникюр с покрытием гель-лаком"

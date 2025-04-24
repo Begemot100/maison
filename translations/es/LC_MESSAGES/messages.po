@@ -3,8 +3,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: es\n"
 
-msgid "Home"
-msgstr "Inicio"
+msgid "Shop"
+msgstr "Tienda"
 
 msgid "Services"
 msgstr "Servicios"
@@ -48,7 +48,7 @@ msgstr "¡Reserva enviada con éxito! Nos pondremos en contacto contigo."
 msgid "Please fill out all fields correctly."
 msgstr "Por favor, completa todos los campos correctamente."
 
-msgid "Discover the art of self-care in a luxurious environment where beauty knows no bounds. Embrace the beauty you deserve, only at The Beauty House."
+msgid "Discover the art of self-care in a luxurious environment where beauty knows no bounds. Embrace the beauty you deserve, only at Maison Beauty Space."
 msgstr "Descubre el arte del cuidado personal en un entorno lujoso donde la belleza no tiene límites. Disfruta de la belleza que mereces, solo con nosotros."
 
 msgid "TOP STYLIST"
@@ -80,3 +80,78 @@ msgstr "MAQUILLADOR"
 
 msgid "ADMINISTRATOR"
 msgstr "ADMINISTRADORA"
+
+msgid "Manicure"
+msgstr "Manicura"
+
+msgid "Pedicure"
+msgstr "Pedicura"
+
+msgid "Lashes"
+msgstr "Pestañas"
+
+msgid "Coloristic"
+msgstr "Coloración"
+
+msgid "Brows"
+msgstr "Cejas"
+
+msgid "Clients"
+msgstr "Clientes"
+
+msgid "At Maison Beauty Space, we blend luxury, professionalism, and care. Our mission is to help every client reveal their unique beauty through personalized treatments and a warm atmosphere."
+msgstr "En Maison Beauty Space combinamos lujo, profesionalismo y cuidado. Nuestra misión es ayudar a cada cliente a revelar su belleza única mediante tratamientos personalizados y un ambiente acogedor."
+
+msgid "Prices for services"
+msgstr "Precios de servicios"
+
+msgid "Manicure"
+msgstr "Manicura"
+
+msgid "Pedicure"
+msgstr "Pedicura"
+
+msgid "Lashes"
+msgstr "Extensiones de pestañas"
+
+msgid "Hair"
+msgstr "Pelo"
+
+msgid "Brows"
+msgstr "Cejas"
+
+msgid "Clients"
+msgstr "Clientes"
+
+msgid "Endosphera"
+msgstr "Endospheres"
+
+msgid "Massage"
+msgstr "Masaje"
+
+msgid "Cosmetology"
+msgstr "Cosmetología"
+
+msgid "Consultation"
+msgstr "Consulta"
+
+msgid "Makeup"
+msgstr "Maquillaje"
+
+msgid "Hair removal"
+msgstr "Depilación"
+
+msgid "Welcome package for new clients"
+msgstr "Paquete de bienvenida solo nuevas clientes"
+
+msgid "Lash extensions"
+msgstr "Extensiones de pestañas"
+
+msgid "First haircut + complimentary treatment"
+msgstr "Primer corte + tratamiento de regalo"
+
+msgid "First endospheres session"
+msgstr "Primera sesión de endoesfera"
+
+msgid "First manicure with permanent polish"
+msgstr "Primera manicura con esmaltado permanente"
