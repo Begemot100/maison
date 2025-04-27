@@ -155,3 +155,6 @@ msgstr "Primera sesión de endoesfera"
 
 msgid "First manicure with permanent polish"
 msgstr "Primera manicura con esmaltado permanente"
+
+msgid 'Message on WhatsApp'
+msgstr 'Escribe Whatsapp'

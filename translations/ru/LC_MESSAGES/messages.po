@@ -149,3 +149,6 @@ msgstr "Первая процедура эндосферы"
 
 msgid "First manicure with permanent polish"
 msgstr "Первая маникюр с покрытием гель-лаком"
+
+msgid 'Message on WhatsApp'
+msgstr 'Написать на Ватсап'
