@@ -152,3 +152,9 @@ msgstr "Первая маникюр с покрытием гель-лаком"
 
 msgid 'Message on WhatsApp'
 msgstr 'Написать на Ватсап'
+
+msgid 'Contact Us'
+msgstr 'Контакты'
+
+msgid 'We are located in the heart of the city. Reach out to us or visit our salon.'
+msgstr 'Мы находимся в самом центре города. Свяжитесь с нами или посетите наш салон.'

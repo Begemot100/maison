@@ -158,3 +158,9 @@ msgstr "Primera manicura con esmaltado permanente"
 
 msgid 'Message on WhatsApp'
 msgstr 'Escribe Whatsapp'
+
+msgid 'Contact Us'
+msgstr 'Contactos'
+
+msgid 'We are located in the heart of the city. Reach out to us or visit our salon.'
+msgstr 'Estamos ubicados en el corazón de la ciudad. Contáctanos o visita nuestro salón.'
