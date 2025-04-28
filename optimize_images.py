@@ -1,22 +1,16 @@
-import os
 from PIL import Image
+import os
 
-# Путь к папке с изображениями
-folder_path = ('/Users/germany/PycharmProjects/PythonProject/PythonProject11/static/images/endo')
+input_folder = "/Users/germany/PycharmProjects/PythonProject/PythonProject11/static/images/portfolio"
+output_folder = "/Users/germany/PycharmProjects/PythonProject/PythonProject11/static/images_webp/portfolio_webp"
 
-# Проходим по всем файлам в папке
-for filename in os.listdir(folder_path):
-    if filename.lower().endswith(('.jpg', '.jpeg', '.png', '.webp')):
-        file_path = os.path.join(folder_path, filename)
+os.makedirs(output_folder, exist_ok=True)
 
-        # Открываем картинку
-        with Image.open(file_path) as img:
-            # Уменьшаем размер (например, 80% от оригинала)
-            img = img.resize((int(img.width * 0.8), int(img.height * 0.8)))
+for filename in os.listdir(input_folder):
+    if filename.lower().endswith(('.jpg', '.jpeg', '.png')):
+        img = Image.open(os.path.join(input_folder, filename))
+        output_file = os.path.join(output_folder, os.path.splitext(filename)[0] + '.webp')
+        img.save(output_file, 'webp', quality=85)
 
-            # Сохраняем с оптимизацией (качество 80%)
-            img.save(file_path, optimize=True, quality=80)
+print("✅ Все изображения конвертированы в WebP!")
 
-            print(f"✅ Оптимизировано: {filename}")
-
-print("🎉 Все картинки успешно оптимизированы!")

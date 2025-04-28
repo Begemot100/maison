@@ -5,26 +5,30 @@ function galleryModal() {
     selectedCategoryName: '',
     galleryData: {
       'Manicure': [
-        'images/portfolio/man.JPG',
-        'images/portfolio/man1.jpeg',
-        'images/portfolio/man2.PNG',
-        'images/portfolio/man3.PNG',
-        'images/portfolio/man4.JPG',
-        'images/portfolio/man5.JPG',
+        'images_webp/portfolio_webp/man.webp',
+        'images_webp/portfolio_webp/man1.webp',
+        'images_webp/portfolio_webp/man2.webp',
+        'images_webp/portfolio_webp/man3.webp',
+        'images_webp/portfolio_webp/man4.webp',
+        'images_webp/portfolio_webp/man5.webp',
 
 
       ],
       'Pedicure': [
-        'images/portfolio/manped.PNG',
-        'images/portfolio/manped1.JPG',
-        'images/portfolio/ped.JPG',
+        'images_webp/portfolio_webp/manped.webp',
+        'images_webp/portfolio_webp/manped1.webp',
+        'images_webp/portfolio_webp/ped.webp',
+
+
 
       ],
       'Lashes': [
-        'images/portfolio/brow.JPG',
-        'images/portfolio/brow1.JPG',
-        'images/portfolio/brow2.JPG',
-        'images/portfolio/brow3.JPG',
+         'images_webp/portfolio_webp/brow.webp',
+        'images_webp/portfolio_webp/brow1.webp',
+        'images_webp/portfolio_webp/brow2.webp',
+        'images_webp/portfolio_webp/brow3.webp',
+
+
 
 
       ],
