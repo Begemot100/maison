@@ -61,7 +61,7 @@ def index():
             "Pedicure": _("Pedicure"),
             "Lashes": _("Lashes"),
             "Hair": _("Hair"),
-            "Brows": _("Brows"),
+            "Брови": _("Brows"),
             "Clients": _("Clients"),
             "Endosphera": _("Endospheres")
         }
