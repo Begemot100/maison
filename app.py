@@ -53,7 +53,7 @@ def index():
     for idx, row in df.iterrows():
         category = row['Категория']
         service = row['Название']
-        price = row['Цена от']
+        price = row['Цена']
         services.setdefault(category, []).append({'service': service, 'price': price})
 
         translated_gallery = {
