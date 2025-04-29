@@ -31,10 +31,11 @@
 
 </head>
 
-<body class="font-[Cantata_One] text-gray-800 hidden" onload="document.body.classList.remove('hidden')">
-  <div id="preloader" class="fixed inset-0 z-50 bg-white flex items-center justify-center">
-    <span class="text-lg font-semibold animate-pulse">Maison Beauty Space</span>
-  </div>
+<body class="font-[Cantata_One] text-gray-800" style="visibility: hidden; overflow: hidden;">
+      <div id="preloader" class="fixed inset-0 z-50 bg-white flex items-center justify-center">
+        <span class="text-lg font-semibold animate-pulse">Maison Beauty Space</span>
+      </div>
+
   <!-- Header -->
   <header class="bg-white shadow fixed w-full z-10">
     <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
@@ -132,11 +133,11 @@
       Alpine.mutate(el, 'selectedMember', () => member);
       Alpine.mutate(el, 'showModal', () => true);
     }
-      window.addEventListener('load', () => {
+     window.addEventListener('load', () => {
         const preloader = document.getElementById('preloader');
-        if (preloader) {
-          preloader.style.display = 'none';
-        }
+        if (preloader) preloader.remove();
+        document.body.style.visibility = 'visible';
+        document.body.style.overflow = 'auto';
       });
   </script>
 
