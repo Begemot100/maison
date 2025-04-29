@@ -56,23 +56,22 @@ def index():
         price = row['Цена ']
         services.setdefault(category, []).append({'service': service, 'price': price})
 
-        translated_gallery = {
-            "Manicure": _("Manicure"),
-            "Pedicure": _("Pedicure"),
-            "Lashes": _("Lashes"),
-            "Hair": _("Hair"),
-            "Brows": _("Brows"),
-            "Clients": _("Clients"),
-            "Endosphera": _("Endospheres")
-        }
+    # ⬇️ Перемести вот эти блоки сюда, вне цикла
+    translated_gallery = {
+        "Manicure": _("Manicure"),
+        "Pedicure": _("Pedicure"),
+        "Lashes": _("Lashes"),
+        "Hair": _("Hair"),
+        "Brows": _("Brows"),
+        "Clients": _("Clients"),
+        "Endosphera": _("Endospheres")
+    }
 
-        translated_services = {
-            "Primer corte + tratamiento de regalo": _("First haircut + complimentary treatment"),
-            "Primera sesión de endoesfera": _("First endospheres session"),
-            "Primera manicura con esmaltado permanente": _("First manicure with permanent polish"),
-            "Primera sesión de endoesfera": _("First endospheres session"),
-            "Primera manicura con esmaltado permanente": _("First manicure with permanent polish")
-        }
+    translated_services = {
+        "Primer corte + tratamiento de regalo": _("First haircut + complimentary treatment"),
+        "Primera sesión de endoesfera": _("First endospheres session"),
+        "Primera manicura con esmaltado permanente": _("First manicure with permanent polish")
+    }
 
     translated_categories = {
         "Paquete de bienvenido solo nuevas clientes": _("Welcome package for new clients"),
