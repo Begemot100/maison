@@ -94,41 +94,65 @@ def index():
             "name": "Tolio",
             "position": "TOP COLORIST | CREATOR OF DISTINCTIVE SHADES",
             "photo": "images_webp/teams_webp/tolio.webp",
-            "description": "Top stylist with international experience."
+            "description": _(
+                "Hello! I'm Tolio, a hair stylist with experience in Europe's top international salons. My mission is to help people feel confident and stylish every day. I specialize in crafting looks that highlight each client's individuality, character, and inner strength. I've been working in the beauty industry since 2004!\n\nWhat I do:\n- Modern haircuts for men and women.\n- Complex color treatments: from natural to bold shades using trendy techniques.\n- Styling for special occasions and daily looks.\n- Hair care and restoration using top professional brands.\n- Personalized style, shape, and color recommendations.\n\nWhy clients choose me:\n- I work with soul and attention to detail.\n- I constantly learn new trends and techniques.\n- I listen deeply and deliver exactly what my clients envision.\n- I use only high-quality, professional products.\n\nIf you want more than just a haircut — if you want style — I’m the one. Let's create your perfect new look together!")
         },
+
         {
             "id": 2,
             "name": "Andrew",
             "position": "TOP COLORIST",
             "photo": "images_webp/teams_webp/andrew.webp",
-            "description": "TOP COLORIST OF COMPLEX TECHNIQUES",
+            "description": _("I’m Andrew — a professional master colorist and educator with over 11 years of experience in the beauty industry. My goal is to create a personalized look that fits you perfectly, makes you feel confident, and stays modern and relevant.\n\nServices I offer:\n• Hair coloring (Blonde, AirTouch, HandTouch, Balayage, California highlights, Shatush, Teasing)\n• Hair toning\n• Hair restoration after coloring (masks, styling, treatments)\n• Consultations to choose a new style and look\n• Women's haircuts and styling\n\nEducation and Courses:\n• 1 year basic training at S&A Group\n• Advanced education: Erteqoob, Hair Sekta, Yulia Litvinova, Esicov\n\nWork Approach:\n• Worked with Ukrainian TV channel STB and singer Nadya Dorofeeva\n• My focus is on highlighting your strengths through the right cut and color\n• I create styles that reflect your individuality and fit your lifestyle\n\nWork Experience:\n• Master Colorist at Art Space Ar4i Stail salon, Kyiv (2014–2023)\n• Specialized in complex techniques (AirTouch, Balayage, Shatush, Teasing)\n• Hair toning and professional care\n• Training and mentoring junior stylists\n• Women's cuts and styling of any complexity")
         },
+
         {
             "id": 3,
             "name": "Olga",
             "position": "STYLIST",
             "photo": "images_webp/teams_webp/olga.webp",
-            "description": "COLORIST OF COMPLEX TECHNIQUES",
+            "description": _("My name is Olga — I am a professional colorist with over 7 years of experience in the beauty industry. My goal is to create hair color that takes into account the condition, individuality, style, and fashion trends, highlighting your personality. I work only with time-tested and practice-proven materials from top global brands, following the latest trends in coloring. My works are not just coloring, but an artistic approach.\n\nServices I offer:\n• Hair coloring in one tone and various techniques: highlighting, AirTouch, blonde, toning.\n• Hair care and restoration based on knowledge of hair structure and trichology.\n• 'Exit from black' procedures and consultations for color selection.\n\nEducation and Courses:\n• Viart Color Academy — Professional Colorist Course (2018)\n• Hairsekta Color and Styling School\n• Wella education, Estel-Pro\n• Master classes in personalized coloring (2017)\n\nMy approach:\n• Individual approach — I believe that a hairdresser is like a doctor, and every client is a unique case.\n• Following trends — I continually study new techniques and methods in coloring.\n• Hair health care — My colorings are not only beautiful but also safe. I use quality, safe materials and restore hair health with strengthening procedures.\n\nWork experience:\n• PremiumHairBar — Colorist (2017–2022)\n• Professional hair coloring in complex techniques (balayage, ombre, shatush)\n• Hair toning and care\n\nMassage therapist:\n• Massage courses at 'Partner Plus', Kyiv (2016)\n• 'Rehabilitologist School', Bila Tserkva — learning work with musculoskeletal dysfunctions\n• Numerous seminars and workshops\n• Currently studying in Spain as a physiotherapy assistant (auxiliar de fisioterapia)\n\nApproach:\n• Gentle and individual\n• Massage as a space for recovery and trust\n• Constant growth as a specialist")
+
+
         },
+
         {
             "id": 4,
             "name": "Ruzanna",
-            "position": "TOP MANICURE MASTERS",
+            "position": "TOP MANICURE MASTER",
             "photo": "images_webp/teams_webp/ruz.webp",
-            "description": "Top Manicure Masters",
+            "description": _("I am a professional nail technician with almost 20 years of experience. I work with various techniques (combination, machine, classic) and improve my qualifications every year, believing that there is always something new to learn and new heights to reach! I love beauty, which is why I chose this profession. I consider myself organized, punctual, and meticulous.")
         },
+
         {
             "id": 5,
             "name": "Julia",
-            "position": "TOP MANICURE MASTERS",
+            "position": "TOP MANICURE MASTER",
             "photo": "images_webp/teams_webp/jul.webp",
-            "description": "Top Manicure Masters",
+            "description": _("Hi! My name is Julia, and I’ve been working as a manicure master for 9 years  Over this time, I’ve not only gained experience — I’ve turned my work into real art   I master various techniques: combined, machine, and classic — I always choose what suits you best   I do both manicures and pedicures and confidently handle even the most difficult corrections   I work quickly  and neatly because I know my craft!  I create any kind of nail designs — from minimalism to full creativity   My mission is to make stunning nails so you leave with a smile, feeling like your hands are true works of art   I’m a warm, open, and positive person   I love my job and treat it with soul and full responsibility   Come visit — we’ll chat, laugh, and of course, make something beautiful!   I’m a nail artist with over 9 years of experience. I love drawing and creating unique, creative designs. Speed and quality are my specialties. Watercolor is my personal passion — I love playing with colors!")
+        },
+
+        {
+            "id": 6,
+            "name": "Ivanna",
+            "position": "TOP MANICURE MASTER",
+            "photo": "images/iv.webp",
+            "description": _("My name is Ivanna, and for the past 7 years I have been creating beauty and confidence at the fingertips of my clients. Once, I simply admired beautiful nails on Instagram and dreamed of having my own look just as well-groomed and stylish. Back then, I had no idea that one day I would become a master who could give this feeling to others. My journey began with curiosity. I bought a lamp, tools, gel polishes, and started practicing on myself and my friends. There were mistakes, nerves, and shaky hands, but with each new manicure I fell more deeply in love with this craft. I trained with the best, attended courses, studied materials and techniques, and constantly improved. Today, I am proud to offer my clients: • Classic, combined, and machine manicures • Nail extensions • Unique designs • Hand and skin care For me, a manicure is not just a job. It's creativity, communication, and an atmosphere of comfort and care. My clients come not only for beautiful nails but also for emotions, trust, and the feeling of being truly cared for. And my story is just beginning.")
+
         },
         {
             "id": 7,
             "name": "Anna",
             "position": "MASSAGE THERAPIST",
             "photo": "images_webp/teams_webp/anna.webp",
+            "description": "Top Manicure Masters",
+        },
+
+        {
+            "id": 8,
+            "name": "Konstantin",
+            "position": "MASSAGE THERAPIST",
+            "photo": "images/Kost.webp",
             "description": "Top Manicure Masters",
         },
         {
