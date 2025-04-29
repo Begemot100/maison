@@ -24,9 +24,9 @@
     </div>
   </div>
   <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 px-4">
-    <img src="{{ url_for('static', filename='images_webp/mainend3.webp') }}" alt="Gallery 1" class="rounded shadow w-full max-h-96 object-cover">
-    <img src="{{ url_for('static', filename='images_webp/int3.webp') }}" alt="Gallery 2" class="rounded shadow w-full max-h-96 object-cover">
     <img src="{{ url_for('static', filename='images_webp/int4.webp') }}" alt="Gallery 3" class="rounded shadow w-full max-h-96 object-cover">
+    <img src="{{ url_for('static', filename='images/mainEnd.jpg') }}" alt="Gallery 1" class="rounded shadow w-full max-h-96 object-cover">
+    <img src="{{ url_for('static', filename='images_webp/int3.webp') }}" alt="Gallery 2" class="rounded shadow w-full max-h-96 object-cover">
     <img src="{{ url_for('static', filename='images_webp/int5.webp') }}" alt="Gallery 4" class="rounded shadow w-full max-h-96 object-cover">
   </div>
 </section>
@@ -72,12 +72,12 @@
 
     <!-- Видео -->
     <div class="flex justify-center">
-      <div class="w-full max-w-[480px] md:max-w-full aspect-[13/9]">
+      <div class="w-full max-w-[480px] md:max-w-full aspect-[3/3]">
         <video
           controls muted autoplay loop
           class="rounded-xl shadow-lg w-full h-full object-cover"
         >
-          <source src="{{ url_for('static', filename='images/video/v1.mp4') }}" type="video/mp4">
+          <source src="{{ url_for('static', filename='images/video/2.MP4') }}" type="video/mp4">
           {{ _('Your browser does not support the video tag.') }}
         </video>
       </div>

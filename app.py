@@ -48,7 +48,7 @@ class BookingForm(FlaskForm):
 @app.route('/')
 def index():
     form = BookingForm()
-    df = pd.read_excel('static/data/s3.xlsx')
+    df = pd.read_excel('static/data/sfin3.xlsx')
     services = {}
     for idx, row in df.iterrows():
         category = row['Категория']
