@@ -233,7 +233,9 @@
     x-transition:leave="transition ease-in duration-300"
     x-transition:leave-start="opacity-100 scale-100"
     x-transition:leave-end="opacity-0 scale-95"
-    @click="showModal = false"
+    @click="closeModal()"
+    @dblclick="closeModal()"
+    @touchend="handleDoubleTap()"
     @touchstart="handleDoubleTap($event)"
     x-cloak
   >
@@ -560,25 +562,35 @@ html {
     return {
       showModal: false,
       selectedMember: null,
+
+      // Для двойного тапа:
       lastTap: 0,
       tapTimeout: null,
+
       members: {{ team_members | tojson | safe }},
+
       openModal(id) {
         this.selectedMember = this.members.find(m => m.id === id);
         this.showModal = true;
       },
-      handleDoubleTap(event) {
-        const currentTime = new Date().getTime();
-        const tapInterval = 300;
-        if (currentTime - this.lastTap < tapInterval) {
+
+      closeModal() {
+        this.showModal = false;
+      },
+
+      handleDoubleTap() {
+        const now = Date.now();
+        const interval = 300;   // мс между тапами
+        if (now - this.lastTap < interval) {
           clearTimeout(this.tapTimeout);
-          this.showModal = false;
+          this.closeModal();
         } else {
+          // сбросим lastTap через interval, если второго тапа не было
           this.tapTimeout = setTimeout(() => {
             this.lastTap = 0;
-          }, tapInterval);
+          }, interval);
         }
-        this.lastTap = currentTime;
+        this.lastTap = now;
       }
     }
   }
