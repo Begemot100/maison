@@ -100,17 +100,33 @@
 <h2
   class="text-4xl md:text-5xl font-bold text-center text-gray-800 uppercase tracking-wider mb-12"
   x-data="{
-    text: '{{ _('-our-team-') }}',
+    text: '{{ _('Our Team') }}',
     isVisible: false,
+    chars: [],
+    steps: 10,
+    currentStep: 0,
     getRandomChar() {
       const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ';
       return chars.charAt(Math.floor(Math.random() * chars.length));
     }
   }"
   x-init="
+    chars = text.split('').map(char => ({ currentChar: char === ' ' ? '\u00A0' : char, targetChar: char === ' ' ? '\u00A0' : char }));
     const observer = new IntersectionObserver((entries) => {
       if (entries[0].isIntersecting) {
         isVisible = true;
+        let interval = setInterval(() => {
+          if (currentStep < steps) {
+            chars = chars.map(char => ({
+              ...char,
+              currentChar: char.targetChar === '\u00A0' ? '\u00A0' : getRandomChar()
+            }));
+            currentStep++;
+          } else {
+            chars = chars.map(char => ({ ...char, currentChar: char.targetChar }));
+            clearInterval(interval);
+          }
+        }, 250);
         observer.disconnect();
       }
     }, { threshold: 0.1 });
@@ -120,31 +136,11 @@
   <span class="inline-flex">
     {% set chars = _('Our Team') %}
     {% for i in range(chars|length) %}
-      {% set char = chars[i] %}
       <span
         class="inline-block"
         x-bind:class="isVisible ? 'animate-spin-char-{{ loop.index }}' : ''"
         style="transform-style: preserve-3d; white-space: pre;"
-        x-data="{ currentChar: '{{ char }}' === ' ' ? '\u00A0' : '{{ char }}', targetChar: '{{ char }}' === ' ' ? '\u00A0' : '{{ char }}', interval: null }"
-        x-init="
-          if (isVisible) {
-            let steps = 12;
-            let stepDelay = 200;
-            let currentStep = 0;
-            interval = setInterval(() => {
-              if (currentStep < steps) {
-                currentChar = '{{ char }}' === ' ' ? '\u00A0' : getRandomChar();
-                currentStep++;
-                // Для имитации 'щелчка' можно добавить звук здесь:
-                // new Audio('click.mp3').play();
-              } else {
-                currentChar = '{{ char }}' === ' ' ? '\u00A0' : '{{ char }}';
-                clearInterval(interval);
-              }
-            }, stepDelay);
-          }
-        "
-        x-text="currentChar"
+        x-text="chars[{{ loop.index0 }}]?.currentChar"
       ></span>
     {% endfor %}
   </span>
@@ -155,12 +151,12 @@
 {% for i in range(20) %}
 @keyframes spin-char-{{ i + 1 }} {
   0% { transform: rotateX(0deg); opacity: 1; }
-  70% { transform: rotateX(1440deg); opacity: 0.7; } /* Быстрое вращение в начале */
-  100% { transform: rotateX(1800deg); opacity: 1; } /* Замедление в конце */
+  70% { transform: rotateX(1440deg); opacity: 0.7; }
+  100% { transform: rotateX(1800deg); opacity: 1; }
 }
 .animate-spin-char-{{ i + 1 }} {
-  animation: spin-char-{{ i + 1 }} 1s cubic-bezier(0.85, 0, 0.15, 1);
-  animation-delay: {{ i * 100 }}ms;
+  animation: spin-char-{{ i + 1 }} 3s cubic-bezier(0.85, 0, 0.15, 1);
+  animation-delay: {{ i * 200 }}ms;
 }
 {% endfor %}
 </style>
