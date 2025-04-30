@@ -326,8 +326,9 @@
     class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-90 z-50 px-4"
     x-show="showModal"
     x-transition
-    @click="showModal = false"
-    @touchstart="handleDoubleTap($event)"
+    @click="closeModal()"
+    @dblclick="closeModal()"
+    @touchstart="handleDoubleTap()"
     x-cloak
   >
     <div class="bg-glass backdrop-blur-md bg-white/30 p-8 rounded-xl max-w-6xl w-[80%] relative shadow-xl overflow-y-auto max-h-[95vh]" @click.stop>

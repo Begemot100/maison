@@ -5,7 +5,6 @@ function galleryModal() {
     selectedCategoryName: '',
     lastTap: 0,
     tapTimeout: null,
-    isVisible: false, // Добавляем для IntersectionObserver
     galleryData: {
       'Manicure': [
         'images_webp/portfolio_webp/man.webp',
@@ -51,36 +50,39 @@ function galleryModal() {
         'images/endo/endos4.jpg',
       ],
     },
-    init() {
-      console.log('galleryModal initialized');
-      console.log('galleryData:', this.galleryData);
-      if (!this.galleryData || Object.keys(this.galleryData).length === 0) {
-        console.error('galleryData is empty or undefined');
-      }
-    },
+//    init() {
+//      console.log('galleryModal initialized');
+//      console.log('galleryData:', this.galleryData);
+//      if (!this.galleryData || Object.keys(this.galleryData).length === 0) {
+//        console.error('galleryData is empty or undefined');
+//      }
+//    },
     openCategory(name) {
-      console.log('Opening category:', name);
-      this.selectedCategoryName = name;
-      this.selectedImages = this.galleryData[name] || [];
-      this.showModal = true;
-      console.log('Selected images:', this.selectedImages);
-    },
-    handleDoubleTap(event) {
-      const currentTime = new Date().getTime();
-      const tapInterval = 300;
-      if (currentTime - this.lastTap < tapInterval) {
-        clearTimeout(this.tapTimeout);
+        this.selectedCategoryName = name;
+        this.selectedImages = this.galleryData[name] || [];
+        this.showModal = true;
+      },
+
+//      openFullImage(imgPath) {
+//        window.open(`/static/${imgPath}`, '_blank');
+//      },
+
+      closeModal() {
         this.showModal = false;
-        console.log('Modal closed via double-tap');
-      } else {
-        this.tapTimeout = setTimeout(() => {
-          this.lastTap = 0;
-        }, tapInterval);
-      }
-      this.lastTap = currentTime;
-    },
-    openFullImage(src) {
-      window.open(src, '_blank');
-    }
-  };
-}
+      },
+    handleDoubleTap() {
+        const now = Date.now();
+        const interval = 300; // мс
+        if (now - this.lastTap < interval) {
+          clearTimeout(this.tapTimeout);
+          this.closeModal();
+        } else {
+          // сбросим lastTap через interval, если второго тапа не было
+          this.tapTimeout = setTimeout(() => {
+            this.lastTap = 0;
+          }, interval);
+        }
+        this.lastTap = now;
+      },
+    };
+  }
