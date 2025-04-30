@@ -226,14 +226,14 @@
 
   <!-- Modal -->
   <div
-    class="fixed inset-x-0 md:inset-0 top-0 md:top-auto flex items-center justify-center bg-black bg-opacity-90 z-50 px-4 md:items-center md:h-full"
+    class="fixed inset-x-0 top-20 md:inset-0 md:top-auto flex items-start md:items-center justify-center bg-black bg-opacity-90 z-50 px-4 h-[calc(100vh-20%)] md:h-full"
     x-show="showModal"
     x-transition
     @click="showModal = false"
     x-cloak
   >
     <div
-      class="bg-glass backdrop-blur-md bg-white/30 p-6 rounded-xl w-full max-w-lg relative shadow-xl overflow-y-auto md:max-h-[80vh] md:h-auto md:top-auto top-20"
+      class="bg-glass backdrop-blur-md bg-white/30 p-6 rounded-xl w-full max-w-lg relative shadow-xl overflow-y-auto max-h-full md:max-h-[80vh] md:h-auto md:top-auto"
       @click.stop
     >
       <template x-if="selectedMember">
@@ -316,71 +316,6 @@
 </section>
 
 <!-- Services Accordion Section -->
-<section
-  id="services"
-  class="bg-black text-gray-300 py-16 px-4"
-  x-data="{ isVisible: false }"
-  x-init="
-    const observer = new IntersectionObserver((entries) => {
-      if (entries[0].isIntersecting) {
-        isVisible = true;
-        observer.disconnect();
-      }
-    }, { threshold: 0.1 });
-    observer.observe($el);
-  "
->
-  <h2 class="text-4xl font-playfair text-center mb-12">
-    {{ _('Prices for services') }}
-  </h2>
-
-  <div class="max-w-4xl mx-auto" x-data="{ open: null }">
-    {% for category, items in services.items() %}
-    <div class="border-b border-gray-300 mb-4">
-      <button
-        class="w-full text-left py-4 text-2xl font-normal flex justify-between items-center focus:outline-none"
-        @click="open === '{{ category }}' ? open = null : open = '{{ category }}'"
-      >
-        <span>{{ translated_categories.get(category, category) }}</span>
-        <span
-          class="transform transition-all duration-800 ease-[cubic-bezier(0.68,-0.6,0.32,1.6)] text-2xl"
-          :class="open === '{{ category }}' ? 'rotate-45 scale-115 text-pink-400 animate-pulse-once' : 'rotate-0 scale-100 text-gray-300'"
-        >+</span>
-      </button>
-
-      <div
-        x-show="open === '{{ category }}'"
-        x-transition:enter="transition duration-800 ease-[cubic-bezier(0.68,-0.6,0.32,1.6)] transform"
-        x-transition:enter-start="opacity-0 -translate-y-6 scale-90 filter blur-sm"
-        x-transition:enter-end="opacity-100 translate-y-0 scale-100 filter blur-none"
-        x-transition:leave="transition duration-800 ease-[cubic-bezier(0.4,0,0.2,1)] transform"
-        x-transition:leave-start="opacity-100 translate-y-0 scale-100 filter blur-none"
-        x-transition:leave-end="opacity-0 -translate-y-6 scale-90 filter blur-sm"
-        class="pl-4 pb-4 space-y-2"
-      >
-        {% for item in items %}
-        <div
-          class="flex justify-between text-lg border-b border-gray-700 py-2"
-          x-show="open === '{{ category }}'"
-          x-transition:enter="transition duration-600 ease-[cubic-bezier(0.68,-0.6,0.32,1.6)] transform"
-          x-transition:enter-start="opacity-0 -translate-x-4"
-          x-transition:enter-end="opacity-100 translate-x-0"
-          x-transition:leave="transition duration-600 ease-[cubic-bezier(0.4,0,0.2,1)] transform"
-          x-transition:leave-start="opacity-100 translate-x-0"
-          x-transition:leave-end="opacity-0 -translate-x-4"
-          style="transition-delay: {{ loop.index0 * 100 }}ms;"
-        >
-          <span>{{ translated_services.get(item.service, item.service) }}</span>
-          <span>{{ item.price }}</span>
-        </div>
-        {% endfor %}
-      </div>
-    </div>
-    {% endfor %}
-  </div>
-</section>
-
-<!-- Contact Section with Map and WhatsApp -->
 <section
   id="contact"
   class="bg-gradient-to-b from-[#fefefe] to-gray-50 py-20 px-6 text-gray-800 font-cantata"
@@ -505,14 +440,6 @@
 /* Плавный скролл */
 html {
   scroll-behavior: smooth;
-}
-
-/* Медиазапрос для мобильных устройств */
-@media (max-width: 767px) {
-  .modal-mobile {
-    height: calc(100vh - 20%);
-    overflow-y: auto;
-  }
 }
 </style>
 
