@@ -28,33 +28,8 @@
       >
     </div>
     <div class="col-span-5 pr-16 flex flex-col justify-center items-end text-right">
-      <h2
-        class="text-4xl md:text-5xl font-bold text-center text-gray-800 uppercase tracking-wider mb-12"
-        x-data="{
-          text: '{{ _('MAISON BEAUTY SPACE') }}',
-          isVisible: false,
-        }"
-        x-init="
-          const observer = new IntersectionObserver((entries) => {
-            if (entries[0].isIntersecting) {
-              isVisible = true;
-              observer.disconnect();
-            }
-          }, { threshold: 0.1 });
-          observer.observe($el);
-        "
-      >
-        <span class="inline-flex">
-          {% set chars = _('MAISON BEAUTY SPACE') %}
-          {% for i in range(chars|length) %}
-            {% set char = chars[i] %}
-            <span
-              class="inline-block opacity-0 translate-y-4 transition-all duration-500 ease-in-out"
-              x-bind:class="isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'"
-              style="transition-delay: {{ i * 50 }}ms; white-space: pre;"
-            >{{ char }}</span>
-          {% endfor %}
-        </span>
+      <h2 class="text-4xl md:text-5xl font-bold text-center text-gray-800 uppercase tracking-wider mb-12">
+        {{ _('MAISON BEAUTY SPACE') }}
       </h2>
       <p class="text-lg text-gray-700 leading-relaxed mb-6">
         {{ _('Discover the art of self-care in a luxurious environment where beauty knows no bounds. Embrace the beauty you deserve, only at Maison Beauty Space.') }}
@@ -119,33 +94,8 @@
       alt="Maison Beauty Interior"
       class="rounded-xl shadow-md w-full h-64 object-cover transition-transform duration-500 hover:scale-105"
     >
-    <h2
-      class="text-4xl font-bold text-center text-gray-800 uppercase tracking-wider mb-12"
-      x-data="{
-        text: '{{ _('MAISON BEAUTY SPACE') }}',
-        isVisible: false,
-      }"
-      x-init="
-        const observer = new IntersectionObserver((entries) => {
-          if (entries[0].isIntersecting) {
-            isVisible = true;
-            observer.disconnect();
-          }
-        }, { threshold: 0.1 });
-        observer.observe($el);
-      "
-    >
-      <span class="inline-flex">
-        {% set chars = _('MAISON BEAUTY SPACE') %}
-        {% for i in range(chars|length) %}
-          {% set char = chars[i] %}
-          <span
-            class="inline-block opacity-0 translate-y-4 transition-all duration-500 ease-in-out"
-            x-bind:class="isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'"
-            style="transition-delay: {{ i * 50 }}ms; white-space: pre;"
-          >{{ char }}</span>
-        {% endfor %}
-      </span>
+    <h2 class="text-4xl font-bold text-center text-gray-800 uppercase tracking-wider mb-12">
+      {{ _('MAISON BEAUTY SPACE') }}
     </h2>
     <p class="text-base text-gray-700 leading-relaxed">
       {{ _('Discover the art of self-care in a luxurious environment where beauty knows no bounds. Embrace the beauty you deserve, only at Maison Beauty Space.') }}
@@ -205,33 +155,8 @@
   >
     <!-- Текст -->
     <div class="text-center md:text-left">
-      <h2
-        class="text-4xl md:text-5xl font-bold text-center text-gray-800 uppercase tracking-wider mb-12"
-        x-data="{
-          text: '{{ _('MAISON BEAUTY SPACE') }}',
-          isVisible: false,
-        }"
-        x-init="
-          const observer = new IntersectionObserver((entries) => {
-            if (entries[0].isIntersecting) {
-              isVisible = true;
-              observer.disconnect();
-            }
-          }, { threshold: 0.1 });
-          observer.observe($el);
-        "
-      >
-        <span class="inline-flex">
-          {% set chars = _('MAISON BEAUTY SPACE') %}
-          {% for i in range(chars|length) %}
-            {% set char = chars[i] %}
-            <span
-              class="inline-block opacity-0 translate-y-4 transition-all duration-500 ease-in-out"
-              x-bind:class="isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'"
-              style="transition-delay: {{ i * 50 }}ms; white-space: pre;"
-            >{{ char }}</span>
-          {% endfor %}
-        </span>
+      <h2 class="text-4xl md:text-5xl font-bold text-center text-gray-800 uppercase tracking-wider mb-12">
+        {{ _('MAISON BEAUTY SPACE') }}
       </h2>
       <p class="text-lg text-gray-600 leading-relaxed">
         {{ _('At Maison Beauty Space, we blend luxury, professionalism, and care. Our mission is to help every client reveal their unique beauty through personalized treatments and a warm atmosphere.') }}
@@ -274,33 +199,8 @@
     observer.observe($el);
   "
 >
-  <h2
-    class="text-4xl md:text-5xl font-bold text-center text-gray-800 uppercase tracking-wider mb-12"
-    x-data="{
-      text: '{{ _('Our Team') }}',
-      isVisible: false,
-    }"
-    x-init="
-      const observer = new IntersectionObserver((entries) => {
-        if (entries[0].isIntersecting) {
-          isVisible = true;
-          observer.disconnect();
-        }
-      }, { threshold: 0.1 });
-      observer.observe($el);
-    "
-  >
-    <span class="inline-flex">
-      {% set chars = _('Our Team') %}
-      {% for i in range(chars|length) %}
-        {% set char = chars[i] %}
-        <span
-          class="inline-block opacity-0 translate-y-4 transition-all duration-500 ease-in-out"
-          x-bind:class="isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'"
-          style="transition-delay: {{ i * 50 }}ms; white-space: pre;"
-        >{{ char }}</span>
-      {% endfor %}
-    </span>
+  <h2 class="text-4xl md:text-5xl font-bold text-center text-gray-800 uppercase tracking-wider mb-12">
+    {{ _('Our Team') }}
   </h2>
 
   <div class="overflow-x-auto no-scrollbar">
@@ -365,33 +265,8 @@
     observer.observe($el);
   "
 >
-  <h2
-    class="text-4xl md:text-5xl font-bold text-center text-gray-800 uppercase tracking-wider mb-12"
-    x-data="{
-      text: '{{ _('Gallery') }}',
-      isVisible: false,
-    }"
-    x-init="
-      const observer = new IntersectionObserver((entries) => {
-        if (entries[0].isIntersecting) {
-          isVisible = true;
-          observer.disconnect();
-        }
-      }, { threshold: 0.1 });
-      observer.observe($el);
-    "
-  >
-    <span class="inline-flex">
-      {% set chars = _('Gallery') %}
-      {% for i in range(chars|length) %}
-        {% set char = chars[i] %}
-        <span
-          class="inline-block opacity-0 translate-y-4 transition-all duration-500 ease-in-out"
-          x-bind:class="isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'"
-          style="transition-delay: {{ i * 50 }}ms; white-space: pre;"
-        >{{ char }}</span>
-      {% endfor %}
-    </span>
+  <h2 class="text-4xl md:text-5xl font-bold text-center text-gray-800 uppercase tracking-wider mb-12">
+    {{ _('Gallery') }}
   </h2>
 
   <div class="overflow-x-auto no-scrollbar">
@@ -452,33 +327,8 @@
     observer.observe($el);
   "
 >
-  <h2
-    class="text-4xl font-playfair text-center mb-12"
-    x-data="{
-      text: '{{ _('Prices for services') }}',
-      isVisible: false,
-    }"
-    x-init="
-      const observer = new IntersectionObserver((entries) => {
-        if (entries[0].isIntersecting) {
-          isVisible = true;
-          observer.disconnect();
-        }
-      }, { threshold: 0.1 });
-      observer.observe($el);
-    "
-  >
-    <span class="inline-flex">
-      {% set chars = _('Prices for services') %}
-      {% for i in range(chars|length) %}
-        {% set char = chars[i] %}
-        <span
-          class="inline-block opacity-0 translate-y-4 transition-all duration-500 ease-in-out"
-          x-bind:class="isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'"
-          style="transition-delay: {{ i * 50 }}ms; white-space: pre;"
-        >{{ char }}</span>
-      {% endfor %}
-    </span>
+  <h2 class="text-4xl font-playfair text-center mb-12">
+    {{ _('Prices for services') }}
   </h2>
 
   <div class="max-w-4xl mx-auto" x-data="{ open: null }">
@@ -488,17 +338,7 @@
         class="w-full text-left py-4 text-2xl font-normal flex justify-between items-center focus:outline-none"
         @click="open === '{{ category }}' ? open = null : open = '{{ category }}'"
       >
-        <span class="inline-flex space-x-0">
-          {% set chars = translated_categories.get(category, category) %}
-          {% for i in range(chars|length) %}
-            {% set char = chars[i] %}
-            <span
-              class="inline-block opacity-0 translate-y-4 transition-all duration-500 ease-in-out"
-              x-bind:class="open === '{{ category }}' ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'"
-              style="transition-delay: {{ i * 50 }}ms;"
-            >{{ char }}</span>
-          {% endfor %}
-        </span>
+        <span>{{ translated_categories.get(category, category) }}</span>
         <span
           class="transform transition-all duration-800 ease-[cubic-bezier(0.68,-0.6,0.32,1.6)] text-2xl"
           :class="open === '{{ category }}' ? 'rotate-45 scale-115 text-pink-400 animate-pulse-once' : 'rotate-0 scale-100 text-gray-300'"
@@ -558,33 +398,8 @@
   >
     <!-- Left: Contact Info -->
     <div>
-      <h2
-        class="text-4xl font-semibold mb-4"
-        x-data="{
-          text: '{{ _('Contact Us') }}',
-          isVisible: false,
-        }"
-        x-init="
-          const observer = new IntersectionObserver((entries) => {
-            if (entries[0].isIntersecting) {
-              isVisible = true;
-              observer.disconnect();
-            }
-          }, { threshold: 0.1 });
-          observer.observe($el);
-        "
-      >
-        <span class="inline-flex">
-          {% set chars = _('Contact Us') %}
-          {% for i in range(chars|length) %}
-            {% set char = chars[i] %}
-            <span
-              class="inline-block opacity-0 translate-y-4 transition-all duration-500 ease-in-out"
-              x-bind:class="isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'"
-              style="transition-delay: {{ i * 50 }}ms; white-space: pre;"
-            >{{ char }}</span>
-          {% endfor %}
-        </span>
+      <h2 class="text-4xl font-semibold mb-4">
+        {{ _('Contact Us') }}
       </h2>
       <p class="text-lg text-gray-600 mb-6 leading-relaxed">
         {{ _('We are located in the heart of the city. Reach out to us or visit our salon.') }}
