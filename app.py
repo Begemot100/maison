@@ -303,6 +303,15 @@ def view_cart():
 #     return render_template('cart.html', cart_items=cart_items)
 #
 
+@app.after_request
+def add_security_headers(response):
+    response.headers["X-Frame-Options"] = "SAMEORIGIN"
+    response.headers["Strict-Transport-Security"] = "max-age=31536000; includeSubDomains; preload"
+    response.headers["X-Content-Type-Options"] = "nosniff"
+    response.headers["Referrer-Policy"] = "no-referrer-when-downgrade"
+    response.headers["Permissions-Policy"] = "geolocation=(), microphone=()"
+    return response
+
 
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 8000))
