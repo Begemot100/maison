@@ -33,31 +33,11 @@
         x-data="{
           text: '{{ _('MAISON BEAUTY SPACE') }}',
           isVisible: false,
-          chars: [],
-          steps: 10,
-          currentStep: 0,
-          getRandomChar() {
-            const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ';
-            return chars.charAt(Math.floor(Math.random() * chars.length));
-          }
         }"
         x-init="
-          chars = text.split('').map(char => ({ currentChar: char === ' ' ? '\u00A0' : char, targetChar: char === ' ' ? '\u00A0' : char }));
           const observer = new IntersectionObserver((entries) => {
             if (entries[0].isIntersecting) {
               isVisible = true;
-              let interval = setInterval(() => {
-                if (currentStep < steps) {
-                  chars = chars.map(char => ({
-                    ...char,
-                    currentChar: char.targetChar === '\u00A0' ? '\u00A0' : getRandomChar()
-                  }));
-                  currentStep++;
-                } else {
-                  chars = chars.map(char => ({ ...char, currentChar: char.targetChar }));
-                  clearInterval(interval);
-                }
-              }, 250);
               observer.disconnect();
             }
           }, { threshold: 0.1 });
@@ -67,12 +47,12 @@
         <span class="inline-flex">
           {% set chars = _('MAISON BEAUTY SPACE') %}
           {% for i in range(chars|length) %}
+            {% set char = chars[i] %}
             <span
-              class="inline-block"
-              x-bind:class="isVisible ? 'animate-spin-char-{{ loop.index }}' : ''"
-              style="transform-style: preserve-3d; white-space: pre;"
-              x-text="chars[{{ loop.index0 }}]?.currentChar"
-            ></span>
+              class="inline-block opacity-0 translate-y-4 transition-all duration-500 ease-in-out"
+              x-bind:class="isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'"
+              style="transition-delay: {{ i * 50 }}ms; white-space: pre;"
+            >{{ char }}</span>
           {% endfor %}
         </span>
       </h2>
@@ -144,31 +124,11 @@
       x-data="{
         text: '{{ _('MAISON BEAUTY SPACE') }}',
         isVisible: false,
-        chars: [],
-        steps: 10,
-        currentStep: 0,
-        getRandomChar() {
-          const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ';
-          return chars.charAt(Math.floor(Math.random() * chars.length));
-        }
       }"
       x-init="
-        chars = text.split('').map(char => ({ currentChar: char === ' ' ? '\u00A0' : char, targetChar: char === ' ' ? '\u00A0' : char }));
         const observer = new IntersectionObserver((entries) => {
           if (entries[0].isIntersecting) {
             isVisible = true;
-            let interval = setInterval(() => {
-              if (currentStep < steps) {
-                chars = chars.map(char => ({
-                  ...char,
-                  currentChar: char.targetChar === '\u00A0' ? '\u00A0' : getRandomChar()
-                }));
-                currentStep++;
-              } else {
-                chars = chars.map(char => ({ ...char, currentChar: char.targetChar }));
-                clearInterval(interval);
-              }
-            }, 250);
             observer.disconnect();
           }
         }, { threshold: 0.1 });
@@ -178,12 +138,12 @@
       <span class="inline-flex">
         {% set chars = _('MAISON BEAUTY SPACE') %}
         {% for i in range(chars|length) %}
+          {% set char = chars[i] %}
           <span
-            class="inline-block"
-            x-bind:class="isVisible ? 'animate-spin-char-{{ loop.index }}' : ''"
-            style="transform-style: preserve-3d; white-space: pre;"
-            x-text="chars[{{ loop.index0 }}]?.currentChar"
-          ></span>
+            class="inline-block opacity-0 translate-y-4 transition-all duration-500 ease-in-out"
+            x-bind:class="isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'"
+            style="transition-delay: {{ i * 50 }}ms; white-space: pre;"
+          >{{ char }}</span>
         {% endfor %}
       </span>
     </h2>
@@ -250,31 +210,11 @@
         x-data="{
           text: '{{ _('MAISON BEAUTY SPACE') }}',
           isVisible: false,
-          chars: [],
-          steps: 10,
-          currentStep: 0,
-          getRandomChar() {
-            const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ';
-            return chars.charAt(Math.floor(Math.random() * chars.length));
-          }
         }"
         x-init="
-          chars = text.split('').map(char => ({ currentChar: char === ' ' ? '\u00A0' : char, targetChar: char === ' ' ? '\u00A0' : char }));
           const observer = new IntersectionObserver((entries) => {
             if (entries[0].isIntersecting) {
               isVisible = true;
-              let interval = setInterval(() => {
-                if (currentStep < steps) {
-                  chars = chars.map(char => ({
-                    ...char,
-                    currentChar: char.targetChar === '\u00A0' ? '\u00A0' : getRandomChar()
-                  }));
-                  currentStep++;
-                } else {
-                  chars = chars.map(char => ({ ...char, currentChar: char.targetChar }));
-                  clearInterval(interval);
-                }
-              }, 250);
               observer.disconnect();
             }
           }, { threshold: 0.1 });
@@ -284,12 +224,12 @@
         <span class="inline-flex">
           {% set chars = _('MAISON BEAUTY SPACE') %}
           {% for i in range(chars|length) %}
+            {% set char = chars[i] %}
             <span
-              class="inline-block"
-              x-bind:class="isVisible ? 'animate-spin-char-{{ loop.index }}' : ''"
-              style="transform-style: preserve-3d; white-space: pre;"
-              x-text="chars[{{ loop.index0 }}]?.currentChar"
-            ></span>
+              class="inline-block opacity-0 translate-y-4 transition-all duration-500 ease-in-out"
+              x-bind:class="isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'"
+              style="transition-delay: {{ i * 50 }}ms; white-space: pre;"
+            >{{ char }}</span>
           {% endfor %}
         </span>
       </h2>
@@ -339,31 +279,11 @@
     x-data="{
       text: '{{ _('Our Team') }}',
       isVisible: false,
-      chars: [],
-      steps: 10,
-      currentStep: 0,
-      getRandomChar() {
-        const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ';
-        return chars.charAt(Math.floor(Math.random() * chars.length));
-      }
     }"
     x-init="
-      chars = text.split('').map(char => ({ currentChar: char === ' ' ? '\u00A0' : char, targetChar: char === ' ' ? '\u00A0' : char }));
       const observer = new IntersectionObserver((entries) => {
         if (entries[0].isIntersecting) {
           isVisible = true;
-          let interval = setInterval(() => {
-            if (currentStep < steps) {
-              chars = chars.map(char => ({
-                ...char,
-                currentChar: char.targetChar === '\u00A0' ? '\u00A0' : getRandomChar()
-              }));
-              currentStep++;
-            } else {
-              chars = chars.map(char => ({ ...char, currentChar: char.targetChar }));
-              clearInterval(interval);
-            }
-          }, 250);
           observer.disconnect();
         }
       }, { threshold: 0.1 });
@@ -373,12 +293,12 @@
     <span class="inline-flex">
       {% set chars = _('Our Team') %}
       {% for i in range(chars|length) %}
+        {% set char = chars[i] %}
         <span
-          class="inline-block"
-          x-bind:class="isVisible ? 'animate-spin-char-{{ loop.index }}' : ''"
-          style="transform-style: preserve-3d; white-space: pre;"
-          x-text="chars[{{ loop.index0 }}]?.currentChar"
-        ></span>
+          class="inline-block opacity-0 translate-y-4 transition-all duration-500 ease-in-out"
+          x-bind:class="isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'"
+          style="transition-delay: {{ i * 50 }}ms; white-space: pre;"
+        >{{ char }}</span>
       {% endfor %}
     </span>
   </h2>
@@ -450,31 +370,11 @@
     x-data="{
       text: '{{ _('Gallery') }}',
       isVisible: false,
-      chars: [],
-      steps: 10,
-      currentStep: 0,
-      getRandomChar() {
-        const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ';
-        return chars.charAt(Math.floor(Math.random() * chars.length));
-      }
     }"
     x-init="
-      chars = text.split('').map(char => ({ currentChar: char === ' ' ? '\u00A0' : char, targetChar: char === ' ' ? '\u00A0' : char }));
       const observer = new IntersectionObserver((entries) => {
         if (entries[0].isIntersecting) {
           isVisible = true;
-          let interval = setInterval(() => {
-            if (currentStep < steps) {
-              chars = chars.map(char => ({
-                ...char,
-                currentChar: char.targetChar === '\u00A0' ? '\u00A0' : getRandomChar()
-              }));
-              currentStep++;
-            } else {
-              chars = chars.map(char => ({ ...char, currentChar: char.targetChar }));
-              clearInterval(interval);
-            }
-          }, 250);
           observer.disconnect();
         }
       }, { threshold: 0.1 });
@@ -484,12 +384,12 @@
     <span class="inline-flex">
       {% set chars = _('Gallery') %}
       {% for i in range(chars|length) %}
+        {% set char = chars[i] %}
         <span
-          class="inline-block"
-          x-bind:class="isVisible ? 'animate-spin-char-{{ loop.index }}' : ''"
-          style="transform-style: preserve-3d; white-space: pre;"
-          x-text="chars[{{ loop.index0 }}]?.currentChar"
-        ></span>
+          class="inline-block opacity-0 translate-y-4 transition-all duration-500 ease-in-out"
+          x-bind:class="isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'"
+          style="transition-delay: {{ i * 50 }}ms; white-space: pre;"
+        >{{ char }}</span>
       {% endfor %}
     </span>
   </h2>
@@ -557,31 +457,11 @@
     x-data="{
       text: '{{ _('Prices for services') }}',
       isVisible: false,
-      chars: [],
-      steps: 10,
-      currentStep: 0,
-      getRandomChar() {
-        const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ';
-        return chars.charAt(Math.floor(Math.random() * chars.length));
-      }
     }"
     x-init="
-      chars = text.split('').map(char => ({ currentChar: char === ' ' ? '\u00A0' : char, targetChar: char === ' ' ? '\u00A0' : char }));
       const observer = new IntersectionObserver((entries) => {
         if (entries[0].isIntersecting) {
           isVisible = true;
-          let interval = setInterval(() => {
-            if (currentStep < steps) {
-              chars = chars.map(char => ({
-                ...char,
-                currentChar: char.targetChar === '\u00A0' ? '\u00A0' : getRandomChar()
-              }));
-              currentStep++;
-            } else {
-              chars = chars.map(char => ({ ...char, currentChar: char.targetChar }));
-              clearInterval(interval);
-            }
-          }, 250);
           observer.disconnect();
         }
       }, { threshold: 0.1 });
@@ -591,12 +471,12 @@
     <span class="inline-flex">
       {% set chars = _('Prices for services') %}
       {% for i in range(chars|length) %}
+        {% set char = chars[i] %}
         <span
-          class="inline-block"
-          x-bind:class="isVisible ? 'animate-spin-char-{{ loop.index }}' : ''"
-          style="transform-style: preserve-3d; white-space: pre;"
-          x-text="chars[{{ loop.index0 }}]?.currentChar"
-        ></span>
+          class="inline-block opacity-0 translate-y-4 transition-all duration-500 ease-in-out"
+          x-bind:class="isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'"
+          style="transition-delay: {{ i * 50 }}ms; white-space: pre;"
+        >{{ char }}</span>
       {% endfor %}
     </span>
   </h2>
@@ -613,27 +493,10 @@
           {% for i in range(chars|length) %}
             {% set char = chars[i] %}
             <span
-              class="inline-block"
-              x-bind:class="open === '{{ category }}' ? 'animate-spin-char-{{ loop.index }}' : ''"
-              style="transform-style: preserve-3d;"
-              x-data="{ currentChar: '{{ char }}', targetChar: '{{ char }}', interval: null }"
-              x-init="
-                currentChar = '{{ char }}' === ' ' ? '\u00A0' : '{{ char }}';
-                if (open === '{{ category }}') {
-                  let steps = 15;
-                  interval = setInterval(() => {
-                    if (steps > 0) {
-                      currentChar = '{{ char }}' === ' ' ? '\u00A0' : getRandomChar();
-                      steps--;
-                    } else {
-                      currentChar = '{{ char }}' === ' ' ? '\u00A0' : '{{ char }}';
-                      clearInterval(interval);
-                    }
-                  }, 150);
-                }
-              "
-              x-text="currentChar"
-            ></span>
+              class="inline-block opacity-0 translate-y-4 transition-all duration-500 ease-in-out"
+              x-bind:class="open === '{{ category }}' ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'"
+              style="transition-delay: {{ i * 50 }}ms;"
+            >{{ char }}</span>
           {% endfor %}
         </span>
         <span
@@ -700,31 +563,11 @@
         x-data="{
           text: '{{ _('Contact Us') }}',
           isVisible: false,
-          chars: [],
-          steps: 10,
-          currentStep: 0,
-          getRandomChar() {
-            const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ';
-            return chars.charAt(Math.floor(Math.random() * chars.length));
-          }
         }"
         x-init="
-          chars = text.split('').map(char => ({ currentChar: char === ' ' ? '\u00A0' : char, targetChar: char === ' ' ? '\u00A0' : char }));
           const observer = new IntersectionObserver((entries) => {
             if (entries[0].isIntersecting) {
               isVisible = true;
-              let interval = setInterval(() => {
-                if (currentStep < steps) {
-                  chars = chars.map(char => ({
-                    ...char,
-                    currentChar: char.targetChar === '\u00A0' ? '\u00A0' : getRandomChar()
-                  }));
-                  currentStep++;
-                } else {
-                  chars = chars.map(char => ({ ...char, currentChar: char.targetChar }));
-                  clearInterval(interval);
-                }
-              }, 250);
               observer.disconnect();
             }
           }, { threshold: 0.1 });
@@ -734,12 +577,12 @@
         <span class="inline-flex">
           {% set chars = _('Contact Us') %}
           {% for i in range(chars|length) %}
+            {% set char = chars[i] %}
             <span
-              class="inline-block"
-              x-bind:class="isVisible ? 'animate-spin-char-{{ loop.index }}' : ''"
-              style="transform-style: preserve-3d; white-space: pre;"
-              x-text="chars[{{ loop.index0 }}]?.currentChar"
-            ></span>
+              class="inline-block opacity-0 translate-y-4 transition-all duration-500 ease-in-out"
+              x-bind:class="isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'"
+              style="transition-delay: {{ i * 50 }}ms; white-space: pre;"
+            >{{ char }}</span>
           {% endfor %}
         </span>
       </h2>
@@ -814,19 +657,6 @@
 </section>
 
 <style>
-/* Анимация вращения символов с эффектом инерции */
-{% for i in range(20) %}
-@keyframes spin-char-{{ i + 1 }} {
-  0% { transform: rotateX(0deg); opacity: 1; }
-  70% { transform: rotateX(1440deg); opacity: 0.7; }
-  100% { transform: rotateX(1800deg); opacity: 1; }
-}
-.animate-spin-char-{{ i + 1 }} {
-  animation: spin-char-{{ i + 1 }} 3s cubic-bezier(0.85, 0, 0.15, 1);
-  animation-delay: {{ i * 200 }}ms;
-}
-{% endfor %}
-
 /* Пульсация для иконки "+" */
 @keyframes pulse-once {
   0% { transform: scale(1.15); }
