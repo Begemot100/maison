@@ -97,9 +97,73 @@
 
     <!-- Our Team Section -->
     <section id="about" class="bg-[#fdf1f3] py-16 px-4" x-data="teamModal()">
-    <h2 class="text-4xl md:text-5xl font-bold text-center text-gray-800 uppercase tracking-wider mb-12">
-      {{ _('Our Team') }}
-    </h2>
+<h2
+  class="text-4xl md:text-5xl font-bold text-center text-gray-800 uppercase tracking-wider mb-12"
+  x-data="{
+    text: '{{ _('-our-team-') }}',
+    isVisible: false,
+    getRandomChar() {
+      const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ';
+      return chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+  }"
+  x-init="
+    const observer = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        isVisible = true;
+        observer.disconnect();
+      }
+    }, { threshold: 0.1 });
+    observer.observe($el);
+  "
+>
+  <span class="inline-flex">
+    {% set chars = _('-our-team-') %}
+    {% for i in range(chars|length) %}
+      {% set char = chars[i] %}
+      <span
+        class="inline-block"
+        x-bind:class="isVisible ? 'animate-spin-char-{{ loop.index }}' : ''"
+        style="transform-style: preserve-3d; white-space: pre;"
+        x-data="{ currentChar: '{{ char }}' === ' ' ? '\u00A0' : '{{ char }}', targetChar: '{{ char }}' === ' ' ? '\u00A0' : '{{ char }}', interval: null }"
+        x-init="
+          if (isVisible) {
+            let steps = 12;
+            let stepDelay = 200;
+            let currentStep = 0;
+            interval = setInterval(() => {
+              if (currentStep < steps) {
+                currentChar = '{{ char }}' === ' ' ? '\u00A0' : getRandomChar();
+                currentStep++;
+                // Для имитации 'щелчка' можно добавить звук здесь:
+                // new Audio('click.mp3').play();
+              } else {
+                currentChar = '{{ char }}' === ' ' ? '\u00A0' : '{{ char }}';
+                clearInterval(interval);
+              }
+            }, stepDelay);
+          }
+        "
+        x-text="currentChar"
+      ></span>
+    {% endfor %}
+  </span>
+</h2>
+
+<style>
+/* Анимация вращения символов с эффектом инерции */
+{% for i in range(20) %}
+@keyframes spin-char-{{ i + 1 }} {
+  0% { transform: rotateX(0deg); opacity: 1; }
+  70% { transform: rotateX(1440deg); opacity: 0.7; } /* Быстрое вращение в начале */
+  100% { transform: rotateX(1800deg); opacity: 1; } /* Замедление в конце */
+}
+.animate-spin-char-{{ i + 1 }} {
+  animation: spin-char-{{ i + 1 }} 3s cubic-bezier(0.85, 0, 0.15, 1);
+  animation-delay: {{ i * 200 }}ms;
+}
+{% endfor %}
+</style>
 
       <div class="overflow-x-auto no-scrollbar">
         <div class="flex space-x-6 snap-x scroll-smooth px-2 md:px-8">
