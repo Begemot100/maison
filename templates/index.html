@@ -269,8 +269,7 @@
 <section
   id="gallery"
   class="bg-gradient-to-b from-white to-gray-50 py-16 px-4"
-  x-data="galleryModal()"
-  x-data="{ isVisible: false }"
+  x-data="{ isVisible: false, showModal: false, selectedCategoryName: '', selectedImages: [] }"
   x-init="
     const observer = new IntersectionObserver((entries) => {
       if (entries[0].isIntersecting) {
@@ -291,6 +290,16 @@
       }
       lastTap = currentTime;
     });
+
+    this.openCategory = function(name) {
+      this.selectedCategoryName = window.translatedGallery[name] || name;
+      this.selectedImages = window.galleryData[name];
+      this.showModal = true;
+    };
+
+    this.openFullImage = function(imageSrc) {
+      // Логика для открытия изображения на полный экран, если нужно
+    };
   "
 >
   <h2 class="text-4xl md:text-5xl font-bold text-center text-gray-800 uppercase tracking-wider mb-12">
@@ -300,7 +309,7 @@
   <div class="overflow-x-auto no-scrollbar">
     <div class="flex space-x-6 snap-x scroll-smooth px-2 md:px-8">
       <!-- Блоки категорий -->
-      <template x-for="(images, name) in galleryData" :key="name">
+      <template x-for="(images, name) in window.galleryData" :key="name">
         <div
           class="relative w-[260px] h-[420px] flex-shrink-0 cursor-pointer overflow-hidden rounded-xl transition-transform duration-500 hover:scale-105 hover:shadow-glow"
           @click="openCategory(name)"
@@ -309,9 +318,9 @@
             :src="'/static/' + images[0]"
             alt=""
             class="object-cover w-full h-full transform transition duration-300"
-          />
+          >
           <div class="absolute inset-0 bg-black bg-opacity-30 flex items-end justify-center">
-            <h3 class="text-white text-lg font-semibold pb-3 px-2 text-center w-full" x-text="translatedGallery[name] || name"></h3>
+            <h3 class="text-white text-lg font-semibold pb-3 px-2 text-center w-full" x-text="window.translatedGallery[name] || name"></h3>
           </div>
         </div>
       </template>
@@ -564,27 +573,14 @@ html {
     }
   }
 
-  function galleryModal() {
-    return {
-      showModal: false,
-      selectedCategoryName: '',
-      selectedImages: [],
-      galleryData: window.galleryData || {},
-      translatedGallery: window.translatedGallery || {},
-      openCategory(name) {
-        this.selectedCategoryName = this.translatedGallery[name] || name;
-        this.selectedImages = this.galleryData[name];
-        this.showModal = true;
-      },
-      openFullImage(imageSrc) {
-        // Логика для открытия изображения на полный экран, если нужно
-      }
-    }
-  }
-
   window.translatedCategories = {{ translated_categories | tojson | safe }};
 </script>
 
-{% block scripts %}{% endblock %}
+{% block scripts %}
+<script>
+  window.translatedGallery = {{ translated_gallery | tojson | safe }};
+  window.galleryData = {{ gallery_data | tojson | safe }};
+</script>
+{% endblock %}
 
 {% endblock %}
