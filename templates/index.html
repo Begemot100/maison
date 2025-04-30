@@ -279,6 +279,18 @@
       }
     }, { threshold: 0.1 });
     observer.observe($el);
+
+    let lastTap = 0;
+    $el.addEventListener('touchend', (e) => {
+      const currentTime = new Date().getTime();
+      const tapLength = currentTime - lastTap;
+      if (tapLength < 300 && tapLength > 0) {
+        if (showModal) {
+          showModal = false;
+        }
+      }
+      lastTap = currentTime;
+    });
   "
 >
   <h2 class="text-4xl md:text-5xl font-bold text-center text-gray-800 uppercase tracking-wider mb-12">
@@ -556,8 +568,14 @@ html {
       showModal: false,
       selectedCategoryName: '',
       selectedImages: [],
-      galleryData: {}, // Предполагается, что данные галереи передаются через сервер
-      translatedGallery: {}, // Предполагается, что переводы передаются через сервер
+      galleryData: {
+        'category1': ['images_webp/int4.webp', 'images_webp/int3.webp'],
+        'category2': ['images/1.jpeg', 'images_webp/int5.webp']
+      },
+      translatedGallery: {
+        'category1': 'Category 1',
+        'category2': 'Category 2'
+      },
       openCategory(name) {
         this.selectedCategoryName = this.translatedGallery[name] || name;
         this.selectedImages = this.galleryData[name];
