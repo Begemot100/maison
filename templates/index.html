@@ -84,7 +84,6 @@
     observer.observe($el);
   "
 >
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <div
     class="flex flex-col items-center text-center space-y-6 opacity-0 translate-y-4 transition-all duration-700 ease-in-out"
     x-bind:class="isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'"
@@ -153,7 +152,7 @@
     class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center opacity-0 translate-y-4 transition-all duration-700 ease-in-out"
     x-bind:class="isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'"
   >
-    <!-- Текст -->
+    <!-- Text -->
     <div class="text-center md:text-left">
       <h2 class="text-4xl md:text-5xl font-bold text-center text-gray-800 uppercase tracking-wider mb-12">
         {{ _('MAISON BEAUTY SPACE') }}
@@ -163,7 +162,7 @@
       </p>
     </div>
 
-    <!-- Видео -->
+    <!-- Video -->
     <div class="flex justify-center">
       <div
         class="w-full max-w-[480px] md:max-w-full aspect-[3/3] transition-transform duration-500 hover:scale-105"
@@ -197,18 +196,6 @@
       }
     }, { threshold: 0.1 });
     observer.observe($el);
-
-    let lastTap = 0;
-    $el.addEventListener('touchend', (e) => {
-      const currentTime = new Date().getTime();
-      const tapLength = currentTime - lastTap;
-      if (tapLength < 300 && tapLength > 0) {
-        if (showModal) {
-          showModal = false;
-        }
-      }
-      lastTap = currentTime;
-    });
   "
 >
   <h2 class="text-4xl md:text-5xl font-bold text-center text-gray-800 uppercase tracking-wider mb-12">
@@ -247,14 +234,14 @@
     x-transition:leave-start="opacity-100 scale-100"
     x-transition:leave-end="opacity-0 scale-95"
     @click="showModal = false"
-    @dblclick="showModal = false"
+    @touchstart="handleDoubleTap($event)"
     x-cloak
   >
     <div
       class="bg-gradient-to-b from-white/40 to-white/20 backdrop-blur-xl p-6 rounded-3xl w-full max-w-lg relative shadow-2xl overflow-y-auto max-h-full md:max-h-[80vh] md:h-auto md:top-auto border border-white/20"
       @click.stop
     >
-      <!-- Крестик для закрытия -->
+      <!-- Close Button -->
       <button
         class="absolute top-4 right-4 bg-glass backdrop-blur-md rounded-full w-8 h-8 flex items-center justify-center text-gray-300 hover:text-white hover:bg-white/40 transition-all duration-300 hover:rotate-90"
         @click="showModal = false"
@@ -292,14 +279,14 @@
   </div>
 </section>
 
-
 <!-- Gallery Section -->
 <section
   id="gallery"
   class="bg-gradient-to-b from-white to-gray-50 py-16 px-4"
   x-data="galleryModal()"
-  x-data="{ isVisible: false }"
   x-init="
+    console.log('Gallery section initialized');
+    console.log('galleryData:', galleryData);
     const observer = new IntersectionObserver((entries) => {
       if (entries[0].isIntersecting) {
         isVisible = true;
@@ -324,6 +311,7 @@
             :src="'/static/' + images[0]"
             alt=""
             class="object-cover w-full h-full transform transition duration-300"
+            @error="console.log('Image failed to load:', '/static/' + images[0])"
           >
           <div class="absolute inset-0 bg-black bg-opacity-30 flex items-end justify-center">
             <h3 class="text-white text-lg font-semibold pb-3 px-2 text-center w-full" x-text="translatedGallery[name] || name"></h3>
@@ -339,9 +327,10 @@
     x-show="showModal"
     x-transition
     @click="showModal = false"
+    @touchstart="handleDoubleTap($event)"
     x-cloak
   >
-    <div class="bg-glass backdrop-blur-md bg-white/30 p-8 rounded-xl max-w-6xl w-full relative shadow-xl overflow-y-auto max-h-[95vh]" @click.stop>
+    <div class="bg-glass backdrop-blur-md bg-white/30 p-8 rounded-xl max-w-6xl w-[80%] relative shadow-xl overflow-y-auto max-h-[95vh]" @click.stop>
       <h3 class="text-2xl font-bold text-center mb-4 text-white" x-text="selectedCategoryName"></h3>
       <div class="columns-1 sm:columns-2 md:columns-3 gap-4 space-y-4">
         <template x-for="img in selectedImages" :key="img">
@@ -349,6 +338,7 @@
             :src="'/static/' + img"
             @click="openFullImage('/static/' + img)"
             class="rounded-xl shadow object-cover w-full max-w-[100%] h-auto cursor-zoom-in transition-transform duration-500 hover:scale-100"
+            @error="console.log('Modal image failed to load:', '/static/' + img)"
           />
         </template>
       </div>
@@ -394,6 +384,7 @@
         class="fixed inset-x-0 top-20 md:inset-0 md:top-auto flex items-start md:items-center justify-center bg-black bg-opacity-90 z-50 px-4 h-[calc(100vh-20%)] md:h-full"
         x-transition
         @click="open = null"
+        @touchstart="handleServiceDoubleTap($event)"
       >
         <div
           class="bg-glass backdrop-blur-md bg-white/30 p-6 rounded-xl w-full max-w-lg relative shadow-xl overflow-y-auto max-h-full md:max-h-[80vh] md:h-auto md:top-auto"
@@ -550,15 +541,17 @@
 html {
   scroll-behavior: smooth;
 }
-  #services .flex {
+
+#services .flex {
   font-size: clamp(16px, 2vw, 16px); /* Масштабирование текста */
 }
-  @media (max-width: 768px) {
+
+@media (max-width: 768px) {
   #services .flex {
     padding-left: 0;
     padding-right: 0;
   }
-
+}
 </style>
 
 <script>
@@ -566,17 +559,30 @@ html {
     return {
       showModal: false,
       selectedMember: null,
+      lastTap: 0,
+      tapTimeout: null,
       members: {{ team_members | tojson | safe }},
       openModal(id) {
         this.selectedMember = this.members.find(m => m.id === id);
         this.showModal = true;
+      },
+      handleDoubleTap(event) {
+        const currentTime = new Date().getTime();
+        const tapInterval = 300;
+        if (currentTime - this.lastTap < tapInterval) {
+          clearTimeout(this.tapTimeout);
+          this.showModal = false;
+        } else {
+          this.tapTimeout = setTimeout(() => {
+            this.lastTap = 0;
+          }, tapInterval);
+        }
+        this.lastTap = currentTime;
       }
     }
   }
 
   window.translatedCategories = {{ translated_categories | tojson | safe }};
 </script>
-
-{% block scripts %}{% endblock %}
 
 {% endblock %}
