@@ -183,3 +183,111 @@ msgstr "Me llamo Ivanna y desde hace 7 años creo belleza y confianza en las yem
 
 msgid "Hi! My name is Julia, and I’ve been working as a manicure master for 9 years  Over this time, I’ve not only gained experience — I’ve turned my work into real art   I master various techniques: combined, machine, and classic — I always choose what suits you best   I do both manicures and pedicures and confidently handle even the most difficult corrections   I work quickly  and neatly because I know my craft!  I create any kind of nail designs — from minimalism to full creativity   My mission is to make stunning nails so you leave with a smile, feeling like your hands are true works of art   I’m a warm, open, and positive person   I love my job and treat it with soul and full responsibility   Come visit — we’ll chat, laugh, and of course, make something beautiful!   I’m a nail artist with over 9 years of experience. I love drawing and creating unique, creative designs. Speed and quality are my specialties. Watercolor is my personal passion — I love playing with colors!"
 msgstr "¡Hola! Me llamo Julia y llevo 9 años trabajando como manicurista   Durante este tiempo, no solo he ganado experiencia, ¡he convertido mi trabajo en un verdadero arte! Domino diferentes técnicas: combinada, con torno y clásica — siempre elijo lo que mejor te convenga  Realizo manicuras y pedicuras, y también me encargo de correcciones difíciles  Trabajo rápido ️ y con precisión — ¡porque sé lo que hago! Puedo crear cualquier diseño — desde el minimalismo hasta los más creativos  Mi misión es hacer uñas increíbles, para que salgas con una sonrisa y sintiendo que tus manos son verdaderas obras de arte  Soy una persona cálida, abierta y positiva  Amo mi trabajo y lo hago con el alma y gran responsabilidad  ¡Ven a verme! Charlaremos, reiremos y, por supuesto, ¡crearemos belleza!  Soy una manicurista con más de 9 años de experiencia. Me encanta dibujar y crear diseños únicos y creativos. La velocidad y la calidad son mi especialidad. La acuarela es mi pasión personal — ¡adoro jugar con los colores!"
+
+msgid "Gua Sha Massage 45 min"
+msgstr "Masaje Gua Sha 45 min"
+
+msgid "Gua Sha Massage 30 min"
+msgstr "Masaje Gua Sha 30 min"
+
+msgid "Back massage 45 min"
+msgstr "Masaje de espalda 45 min"
+
+msgid "Facial massage 60 min"
+msgstr "Masaje facial 60 min"
+
+msgid "Facial massage 45 min"
+msgstr "Masaje facial 45 min"
+
+msgid "Facial massage 30 min"
+msgstr "Masaje facial 30 min"
+
+msgid "Physiotherapy"
+msgstr "Fisioterapia"
+
+msgid "Full body massage"
+msgstr "Masaje corporal"
+
+msgid "Sports massage"
+msgstr "Masaje deportivo"
+
+msgid "Back massage"
+msgstr "Masaje de espalda"
+
+msgid "Pressotherapy"
+msgstr "Presoterapia"
+
+msgid "Cupping massage"
+msgstr "Masaje con ventosas"
+
+msgid "Relaxing massage"
+msgstr "Masaje relajante"
+
+msgid "Classic massage"
+msgstr "Masaje clásico"
+
+msgid "Facial sculpting massage"
+msgstr "Masaje facial modelador"
+
+msgid "45-min Anti-cellulite massage"
+msgstr "Masaje anticelulítico de 45 min"
+
+msgid "Full pedicure without polish"
+msgstr "Pedicura completa sin esmalte"
+
+msgid "Full pedicure with semi-permanent polish"
+msgstr "Pedicura completa con esmalte semipermanente"
+
+msgid "Remove semi-permanent polish"
+msgstr "Retirar esmalte semipermanente"
+
+msgid "French design"
+msgstr "Diseño francés"
+
+msgid "Manicure with regular polish for girls (12 y.o.)"
+msgstr "Manicura con esmalte regular para niñas (12 años)"
+
+msgid "Complete pedicure for men"
+msgstr "Pedicura completa para hombres"
+
+msgid "Paraffin therapy for feet"
+msgstr "Terapia de parafina para pies"
+
+msgid "Paraffin therapy for hands"
+msgstr "Terapia de parafina para manos"
+
+msgid "Japanese manicure without polish"
+msgstr "Manicura japonesa sin esmalte"
+
+msgid "Nail extensions size XL without manicure"
+msgstr "Extensiones de uñas XL sin manicura"
+
+msgid "Nail extensions size L without manicure"
+msgstr "Extensiones de uñas L sin manicura"
+
+msgid "Nail extensions size M without manicure"
+msgstr "Extensiones de uñas M sin manicura"
+
+msgid "Nail extensions size S without manicure"
+msgstr "Extensiones de uñas S sin manicura"
+
+msgid "Remove gel nails"
+msgstr "Retirar uñas de gel"
+
+msgid "Stamping on all nails"
+msgstr "Stamping en todas las uñas"
+
+msgid "Fill 1 nail extension"
+msgstr "Relleno de 1 uña"
+
+msgid "Design on one nail"
+msgstr "Diseño en una uña"
+
+msgid "Design on all nails"
+msgstr "Diseño en todas las uñas"
+
+msgid "Complete manicure with regular polish"
+msgstr "Manicura completa con esmalte regular"
+
+msgid "Complete manicure without polish"
+msgstr "Manicura completa sin esmalte"

@@ -70,7 +70,47 @@ def index():
     translated_services = {
         "Primer corte + tratamiento de regalo": _("First haircut + complimentary treatment"),
         "Primera sesión de endoesfera": _("First endospheres session"),
-        "Primera manicura con esmaltado permanente": _("First manicure with permanent polish")
+        "Primera manicura con esmaltado permanente": _("First manicure with permanent polish"),
+
+        "Masaje Gua Sha 45 min": _("Gua Sha Massage 45 min"),
+        "Masaje Gua Sha 30 min": _("Gua Sha Massage 30 min"),
+        "Masaje espalda 45": _("Back massage 45 min"),
+        "Masaje facial 60 min": _("Facial massage 60 min"),
+        "Masaje facial 45 min": _("Facial massage 45 min"),
+        "Masaje facial 30 min": _("Facial massage 30 min"),
+        "Fisioterapia": _("Physiotherapy"),
+        "Masaje corporal": _("Full body massage"),
+        "Masaje deportivo": _("Sports massage"),
+        "Masaje de espalda": _("Back massage"),
+        "Presoterapia": _("Pressotherapy"),
+        "Masaje con ventosas": _("Cupping massage"),
+        "Masaje relajante": _("Relaxing massage"),
+        "Masaje clásico": _("Classic massage"),
+        "Masaje facial modelador": _("Facial sculpting massage"),
+        "45 Masaje anticelulítico": _("45-min Anti-cellulite massage"),
+        "Pedicura completa sin esmalte": _("Full pedicure without polish"),
+        "Pedicura completa con esmalte semipermanente": _("Full pedicure with semi-permanent polish"),
+        "Quitar esmalte semipermanente": _("Remove semi-permanent polish"),
+        "Diseño Frances": _("French design"),
+
+        "Manicura con esmalte normal niñas 12 años": _("Manicure with regular polish for girls (up to 12 years)"),
+        "Pedicura completa masculina": _("Men's full pedicure"),
+        "ParafinoTerapia para pies": _("Paraffin therapy for feet"),
+        "ParafinoTerapia para manos": _("Paraffin therapy for hands"),
+        "Manicura japonesa sin esmalte": _("Japanese manicure without polish"),
+
+        "Extensiones de uñas talla XL sin manicura": _("XL size nail extensions without manicure"),
+        "Extensiones de uñas talla L sin manicura": _("L size nail extensions without manicure"),
+        "Extensiones de uñas talla M sin manicura": _("M size nail extensions without manicure"),
+        "Extensiones de uñas talla S sin manicura": _("S size nail extensions without manicure"),
+
+        "Quitar uñas de gel": _("Remove gel nails"),
+        "Estampado en todas las uñas": _("Stamp design on all nails"),
+        "Extension rellenar 1 uña": _("Refill 1 nail extension"),
+        "Diseño en una uña": _("Design on one nail"),
+        "Diseño en todas las uña": _("Design on all nails"),
+        "Manicura completa con esmalte normal": _("Full manicure with regular polish"),
+        "Manicura completa sin esmalte": _("Full manicure without polish"),
     }
 
     translated_categories = {
@@ -93,8 +133,7 @@ def index():
             "name": "Tolio",
             "position": "TOP COLORIST | CREATOR OF DISTINCTIVE SHADES",
             "photo": "images_webp/teams_webp/tolio.webp",
-            "description": _(
-                "Hello! I'm Tolio, a hair stylist with experience in Europe's top international salons. My mission is to help people feel confident and stylish every day. I specialize in crafting looks that highlight each client's individuality, character, and inner strength. I've been working in the beauty industry since 2004!\n\nWhat I do:\n- Modern haircuts for men and women.\n- Complex color treatments: from natural to bold shades using trendy techniques.\n- Styling for special occasions and daily looks.\n- Hair care and restoration using top professional brands.\n- Personalized style, shape, and color recommendations.\n\nWhy clients choose me:\n- I work with soul and attention to detail.\n- I constantly learn new trends and techniques.\n- I listen deeply and deliver exactly what my clients envision.\n- I use only high-quality, professional products.\n\nIf you want more than just a haircut — if you want style — I’m the one. Let's create your perfect new look together!")
+            "description": _("Hello! I'm Tolio, a hair stylist with experience in Europe's top international salons. My mission is to help people feel confident and stylish every day. I specialize in crafting looks that highlight each client's individuality, character, and inner strength. I've been working in the beauty industry since 2004!\n\nWhat I do:\n- Modern haircuts for men and women.\n- Complex color treatments: from natural to bold shades using trendy techniques.\n- Styling for special occasions and daily looks.\n- Hair care and restoration using top professional brands.\n- Personalized style, shape, and color recommendations.\n\nWhy clients choose me:\n- I work with soul and attention to detail.\n- I constantly learn new trends and techniques.\n- I listen deeply and deliver exactly what my clients envision.\n- I use only high-quality, professional products.\n\nIf you want more than just a haircut — if you want style — I’m the one. Let's create your perfect new look together!")
         },
 
         {

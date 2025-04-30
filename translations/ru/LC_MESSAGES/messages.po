@@ -226,3 +226,111 @@ msgstr "Меня зовут Иванна, и вот уже 7 лет я созд�
 
 msgid "Hi! My name is Julia, and I’ve been working as a manicure master for 9 years  Over this time, I’ve not only gained experience — I’ve turned my work into real art   I master various techniques: combined, machine, and classic — I always choose what suits you best   I do both manicures and pedicures and confidently handle even the most difficult corrections   I work quickly  and neatly because I know my craft!  I create any kind of nail designs — from minimalism to full creativity   My mission is to make stunning nails so you leave with a smile, feeling like your hands are true works of art   I’m a warm, open, and positive person   I love my job and treat it with soul and full responsibility   Come visit — we’ll chat, laugh, and of course, make something beautiful!   I’m a nail artist with over 9 years of experience. I love drawing and creating unique, creative designs. Speed and quality are my specialties. Watercolor is my personal passion — I love playing with colors!"
 msgstr "Привет! Меня зовут Юля, и я уже 9 лет работаю мастером маникюра   За это время я не просто накопила опыт — я превратила свою работу в настоящее искусство   Владею разными техниками: комбинированный, аппаратный, обрезной — выбираю то, что подойдёт именно тебе   Делаю маникюр и педикюр, справляюсь даже с самыми сложными коррекциями   Работаю быстро ️ и аккуратно — потому что знаю своё дело!  Рисую любые дизайны — от минимализма до самого креатива   Моя миссия — делать офигенные ноготочки, чтобы ты уходила с улыбкой и ощущением, что твои ручки — настоящее произведение искусства   Я очень тёплая, открытая и позитивная девушка   Люблю свою работу и отношусь к ней с душой и полной ответственностью   Приходи ко мне — поболтаем, посмеёмся, и, конечно же, сделаем красоту!   Я мастер с опытом более 9 лет, люблю рисовать, придумывать необычные дизайны.  Работаю быстро и качественно. Акварель — моя отдельная любовь: обожаю играть с цветами!"
+
+msgid "Gua Sha Massage 45 min"
+msgstr "Массаж Гуа Ша 45 мин"
+
+msgid "Gua Sha Massage 30 min"
+msgstr "Массаж Гуа Ша 30 мин"
+
+msgid "Back massage 45 min"
+msgstr "Массаж спины 45 мин"
+
+msgid "Facial massage 60 min"
+msgstr "Массаж лица 60 мин"
+
+msgid "Facial massage 45 min"
+msgstr "Массаж лица 45 мин"
+
+msgid "Facial massage 30 min"
+msgstr "Массаж лица 30 мин"
+
+msgid "Physiotherapy"
+msgstr "Физиотерапия"
+
+msgid "Full body massage"
+msgstr "Массаж всего тела"
+
+msgid "Sports massage"
+msgstr "Спортивный массаж"
+
+msgid "Back massage"
+msgstr "Массаж спины"
+
+msgid "Pressotherapy"
+msgstr "Прессотерапия"
+
+msgid "Cupping massage"
+msgstr "Массаж банками"
+
+msgid "Relaxing massage"
+msgstr "Расслабляющий массаж"
+
+msgid "Classic massage"
+msgstr "Классический массаж"
+
+msgid "Facial sculpting massage"
+msgstr "Скульптурный массаж лица"
+
+msgid "45-min Anti-cellulite massage"
+msgstr "Антицеллюлитный массаж 45 мин"
+
+msgid "Full pedicure without polish"
+msgstr "Полный педикюр без покрытия"
+
+msgid "Full pedicure with semi-permanent polish"
+msgstr "Полный педикюр с полуперманентным покрытием"
+
+msgid "Remove semi-permanent polish"
+msgstr "Снятие полуперманентного покрытия"
+
+msgid "French design"
+msgstr "Френч-дизайн"
+
+msgid "Manicure with regular polish for girls (12 y.o.)"
+msgstr "Маникюр с обычным покрытием для девочек (12 лет)"
+
+msgid "Complete pedicure for men"
+msgstr "Полный педикюр для мужчин"
+
+msgid "Paraffin therapy for feet"
+msgstr "Парафинотерапия для ног"
+
+msgid "Paraffin therapy for hands"
+msgstr "Парафинотерапия для рук"
+
+msgid "Japanese manicure without polish"
+msgstr "Японский маникюр без покрытия"
+
+msgid "Nail extensions size XL without manicure"
+msgstr "Наращивание ногтей XL без маникюра"
+
+msgid "Nail extensions size L without manicure"
+msgstr "Наращивание ногтей L без маникюра"
+
+msgid "Nail extensions size M without manicure"
+msgstr "Наращивание ногтей M без маникюра"
+
+msgid "Nail extensions size S without manicure"
+msgstr "Наращивание ногтей S без маникюра"
+
+msgid "Remove gel nails"
+msgstr "Снятие геля с ногтей"
+
+msgid "Stamping on all nails"
+msgstr "Стемпинг на все ногти"
+
+msgid "Fill 1 nail extension"
+msgstr "Дозаполнение 1 ногтя"
+
+msgid "Design on one nail"
+msgstr "Дизайн на одном ногте"
+
+msgid "Design on all nails"
+msgstr "Дизайн на всех ногтях"
+
+msgid "Complete manicure with regular polish"
+msgstr "Полный маникюр с обычным покрытием"
+
+msgid "Complete manicure without polish"
+msgstr "Полный маникюр без покрытия"
