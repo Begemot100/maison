@@ -24,7 +24,7 @@
       <img
         src="{{ url_for('static', filename='images_webp/int1.webp') }}"
         alt="Maison Beauty Interior"
-        class="rounded-xl shadow-xl h-[600px] object-cover w-full transition-transform duration-500 hover:scale-100"
+        class="rounded-xl shadow-xl h-[600px] object-cover w-full"
       >
     </div>
     <div class="col-span-5 pr-16 flex flex-col justify-center items-end text-right">
@@ -51,7 +51,7 @@
     <img
       src="{{ url_for('static', filename=img) }}"
       alt="Gallery"
-      class="rounded-xl shadow w-full h-40 md:h-64 object-cover transition-transform duration-500 hover:scale-105"
+      class="rounded-xl shadow w-full max-h-64 object-cover"
       x-data="{ isVisible: false }"
       x-init="
         const observer = new IntersectionObserver((entries) => {
@@ -197,18 +197,6 @@
       }
     }, { threshold: 0.1 });
     observer.observe($el);
-
-    let lastTap = 0;
-    $el.addEventListener('touchend', (e) => {
-      const currentTime = new Date().getTime();
-      const tapLength = currentTime - lastTap;
-      if (tapLength < 300 && tapLength > 0) {
-        if (showModal) {
-          showModal = false;
-        }
-      }
-      lastTap = currentTime;
-    });
   "
 >
   <h2 class="text-4xl md:text-5xl font-bold text-center text-gray-800 uppercase tracking-wider mb-12">
@@ -238,60 +226,28 @@
 
   <!-- Modal -->
   <div
-    class="fixed inset-x-0 top-20 md:inset-0 md:top-auto flex items-start md:items-center justify-center bg-black bg-opacity-90 z-50 px-4 h-[calc(100vh-20%)] md:h-full"
+    class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-90 z-50 px-4"
     x-show="showModal"
-    x-transition:enter="transition ease-out duration-500"
-    x-transition:enter-start="opacity-0 scale-95"
-    x-transition:enter-end="opacity-100 scale-100"
-    x-transition:leave="transition ease-in duration-300"
-    x-transition:leave-start="opacity-100 scale-100"
-    x-transition:leave-end="opacity-0 scale-95"
+    x-transition
     @click="showModal = false"
-    @dblclick="showModal = false"
     x-cloak
   >
-    <div
-      class="bg-gradient-to-b from-white/40 to-white/20 backdrop-blur-xl p-6 rounded-3xl w-full max-w-lg relative shadow-2xl overflow-y-auto max-h-full md:max-h-[80vh] md:h-auto md:top-auto border border-white/20"
-      @click.stop
-    >
-      <!-- Крестик для закрытия -->
-      <button
-        class="absolute top-4 right-4 bg-glass backdrop-blur-md rounded-full w-8 h-8 flex items-center justify-center text-gray-300 hover:text-white hover:bg-white/40 transition-all duration-300 hover:rotate-90"
-        @click="showModal = false"
-      >
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-        </svg>
-      </button>
+    <div class="bg-glass backdrop-blur-md bg-white/30 p-6 rounded-xl max-w-lg w-full relative shadow-xl" @click.stop>
       <template x-if="selectedMember">
         <div>
           <img
             :src="'/static/' + selectedMember.photo"
             alt=""
-            class="w-28 h-28 rounded-full mx-auto mb-4 object-cover shadow-md transition-all duration-700 ease-out opacity-0 translate-y-4"
-            x-bind:class="showModal ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'"
+            class="w-28 h-28 rounded-full mx-auto mb-4 object-cover shadow-md transition-transform duration-500 hover:scale-105"
           >
-          <h3
-            class="text-xl font-bold text-center mb-1 text-white transition-all duration-700 ease-out delay-100 opacity-0 translate-y-4"
-            x-bind:class="showModal ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'"
-            x-text="selectedMember.name"
-          ></h3>
-          <p
-            class="text-sm text-center text-gray-200 mb-4 transition-all duration-700 ease-out delay-200 opacity-0 translate-y-4"
-            x-bind:class="showModal ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'"
-            x-text="selectedMember.position"
-          ></p>
-          <p
-            class="text-lg leading-relaxed text-center text-white transition-all duration-700 ease-out delay-300 opacity-0 translate-y-4"
-            x-bind:class="showModal ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'"
-            x-text="selectedMember.description"
-          ></p>
+          <h3 class="text-xl font-bold text-center mb-1 text-white" x-text="selectedMember.name"></h3>
+          <p class="text-sm text-center text-gray-300 mb-4" x-text="selectedMember.position"></p>
+          <p class="text-l leading-relaxed text-center text-white" x-text="selectedMember.description"></p>
         </div>
       </template>
     </div>
   </div>
 </section>
-
 
 <!-- Gallery Section -->
 <section
@@ -333,7 +289,7 @@
     </div>
   </div>
 
-  <!-- Modal | Gallery -->
+  <!-- Modal -->
   <div
     class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-90 z-50 px-4"
     x-show="showModal"
@@ -348,7 +304,7 @@
           <img
             :src="'/static/' + img"
             @click="openFullImage('/static/' + img)"
-            class="rounded-xl shadow object-cover w-full max-w-[100%] h-auto cursor-zoom-in transition-transform duration-500 hover:scale-100"
+            class="rounded-xl shadow object-cover w-full max-w-[100%] h-auto cursor-zoom-in transition-transform duration-500 hover:scale-105"
           />
         </template>
       </div>
@@ -379,45 +335,42 @@
     {% for category, items in services.items() %}
     <div class="border-b border-gray-300 mb-4">
       <button
-        class="w-full text-left py-4 text-4xl font-normal flex justify-between items-center focus:outline-none"
+        class="w-full text-left py-4 text-2xl font-normal flex justify-between items-center focus:outline-none"
         @click="open === '{{ category }}' ? open = null : open = '{{ category }}'"
       >
         <span>{{ translated_categories.get(category, category) }}</span>
         <span
-          class="transform transition-all duration-800 ease-[cubic-bezier(0.68,-0.6,0.32,1.6)] text-4xl"
+          class="transform transition-all duration-800 ease-[cubic-bezier(0.68,-0.6,0.32,1.6)] text-2xl"
           :class="open === '{{ category }}' ? 'rotate-45 scale-115 text-pink-400 animate-pulse-once' : 'rotate-0 scale-100 text-gray-300'"
         >+</span>
       </button>
 
       <div
         x-show="open === '{{ category }}'"
-        class="fixed inset-x-0 top-20 md:inset-0 md:top-auto flex items-start md:items-center justify-center bg-black bg-opacity-90 z-50 px-4 h-[calc(100vh-20%)] md:h-full"
-        x-transition
-        @click="open = null"
+        x-transition:enter="transition duration-800 ease-[cubic-bezier(0.68,-0.6,0.32,1.6)] transform"
+        x-transition:enter-start="opacity-0 -translate-y-6 scale-90 filter blur-sm"
+        x-transition:enter-end="opacity-100 translate-y-0 scale-100 filter blur-none"
+        x-transition:leave="transition duration-800 ease-[cubic-bezier(0.4,0,0.2,1)] transform"
+        x-transition:leave-start="opacity-100 translate-y-0 scale-100 filter blur-none"
+        x-transition:leave-end="opacity-0 -translate-y-6 scale-90 filter blur-sm"
+        class="pl-4 pb-4 space-y-2"
       >
+        {% for item in items %}
         <div
-          class="bg-glass backdrop-blur-md bg-white/30 p-6 rounded-xl w-full max-w-lg relative shadow-xl overflow-y-auto max-h-full md:max-h-[80vh] md:h-auto md:top-auto"
-          @click.stop
+          class="flex justify-between text-lg border-b border-gray-700 py-2"
+          x-show="open === '{{ category }}'"
+          x-transition:enter="transition duration-600 ease-[cubic-bezier(0.68,-0.6,0.32,1.6)] transform"
+          x-transition:enter-start="opacity-0 -translate-x-4"
+          x-transition:enter-end="opacity-100 translate-x-0"
+          x-transition:leave="transition duration-600 ease-[cubic-bezier(0.4,0,0.2,1)] transform"
+          x-transition:leave-start="opacity-100 translate-x-0"
+          x-transition:leave-end="opacity-0 -translate-x-4"
+          style="transition-delay: {{ loop.index0 * 100 }}ms;"
         >
-          <h3 class="text-2xl font-bold text-center mb-4 text-white">{{ translated_categories.get(category, category) }}</h3>
-          <div class="space-y-2">
-            {% for item in items %}
-            <div
-              class="flex justify-between text-lg border-b border-gray-700 py-2"
-              x-transition:enter="transition duration-600 ease-[cubic-bezier(0.68,-0.6,0.32,1.6)] transform"
-              x-transition:enter-start="opacity-0 -translate-x-4"
-              x-transition:enter-end="opacity-100 translate-x-0"
-              x-transition:leave="transition duration-600 ease-[cubic-bezier(0.4,0,0.2,1)] transform"
-              x-transition:leave-start="opacity-100 translate-x-0"
-              x-transition:leave-end="opacity-0 -translate-x-4"
-              style="transition-delay: {{ loop.index0 * 100 }}ms;"
-            >
-              <span>{{ translated_services.get(item.service, item.service) }}</span>
-              <span>{{ item.price }}</span>
-            </div>
-            {% endfor %}
-          </div>
+          <span>{{ translated_services.get(item.service, item.service) }}</span>
+          <span>{{ item.price }}</span>
         </div>
+        {% endfor %}
       </div>
     </div>
     {% endfor %}
@@ -550,15 +503,6 @@
 html {
   scroll-behavior: smooth;
 }
-  #services .flex {
-  font-size: clamp(16px, 2vw, 16px); /* Масштабирование текста */
-}
-  @media (max-width: 768px) {
-  #services .flex {
-    padding-left: 0;
-    padding-right: 0;
-  }
-
 </style>
 
 <script>
