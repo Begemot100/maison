@@ -222,7 +222,7 @@
       {% endfor %}
     </div>
   </div>
-<!--/-->
+
   <!-- Modal -->
   <div
     class="fixed inset-x-0 top-20 md:inset-0 md:top-auto flex items-start md:items-center justify-center bg-black bg-opacity-90 z-50 px-4 h-[calc(100vh-20%)] md:h-full"
@@ -233,12 +233,10 @@
     x-transition:leave="transition ease-in duration-300"
     x-transition:leave-start="opacity-100 scale-100"
     x-transition:leave-end="opacity-0 scale-95"
-    @click="showModal()"
+    @click="closeModal()"
     @dblclick="closeModal()"
-
-    @touchstart="handleDoubleTap()"
     @touchend="handleDoubleTap()"
-
+    @touchstart="handleDoubleTap()"
     x-cloak
   >
     <div
