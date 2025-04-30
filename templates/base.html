@@ -42,49 +42,151 @@
       </div>
 
   <!-- Header -->
-  <header class="bg-white shadow fixed w-full z-10">
-    <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
-      <div class="text-2xl font-playfair font-medium text-gray-500 uppercase">Maison Beauty Space</div>
+  <!-- Стильный хедер -->
+<header
+  class="fixed top-0 left-0 w-full z-50 bg-gradient-to-b from-white/40 to-white/20 backdrop-blur-xl border-b border-white/20 transition-all duration-700 ease-out opacity-0 -translate-y-4"
+  x-data="{ isVisible: false }"
+  x-init="
+    const observer = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        isVisible = true;
+        observer.disconnect();
+      }
+    }, { threshold: 0.1 });
+    observer.observe($el);
+  "
+  x-bind:class="isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'"
+>
+  <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+    <!-- Логотип -->
+    <a href="#" class="text-2xl font-playfair font-medium text-gray-400 uppercase tracking-wide hover:text-apple-blue transition-all duration-300">
+      {{ _('Maison Beauty Space') }}
+    </a>
 
-      <ul class="hidden md:flex space-x-6">
-<!--        <li><a href="#shop" class="hover:text-pink-600 transition">{{ _('Shop') }}</a></li>-->
-        <li><a href="#services" class="hover:text-pink-600 transition">{{ _('Services') }}</a></li>
-        <li><a href="#about" class="hover:text-pink-600 transition">{{ _('Our Team') }}</a></li>
-        <li><a href="#gallery" class="hover:text-pink-600 transition">{{ _('Gallery') }}</a></li>
-        <li><a href="#contact" class="hover:text-pink-600 transition">{{ _('Contact') }}</a></li>
-      </ul>
+    <!-- Навигация -->
+    <ul class="hidden md:flex space-x-6">
+      <li>
+        <a
+          href="#services"
+          class="text-gray-400 hover:text-apple-blue hover:shadow-glow transition-all duration-300 px-3 py-2 rounded-lg"
+        >
+          {{ _('Services') }}
+        </a>
+      </li>
+      <li>
+        <a
+          href="#about"
+          class="text-gray-400 hover:text-apple-blue hover:shadow-glow transition-all duration-300 px-3 py-2 rounded-lg"
+        >
+          {{ _('Our Team') }}
+        </a>
+      </li>
+      <li>
+        <a
+          href="#gallery"
+          class="text-gray-400 hover:text-apple-blue hover:shadow-glow transition-all duration-300 px-3 py-2 rounded-lg"
+        >
+          {{ _('Gallery') }}
+        </a>
+      </li>
+      <li>
+        <a
+          href="#contact"
+          class="text-gray-400 hover:text-apple-blue hover:shadow-glow transition-all duration-300 px-3 py-2 rounded-lg"
+        >
+          {{ _('Contact') }}
+        </a>
+      </li>
+    </ul>
 
-      <!-- Language Switcher -->
-      <div class="hidden md:flex space-x-2 items-center">
-        <a href="?lang=en" class="w-8 h-8 bg-[url('/static/flags/A.png')] bg-cover rounded-sm border border-gray-300 shadow-sm hover:scale-105 hover:ring-2 ring-pink-300 transition duration-300"></a>
-        <a href="?lang=ru" class="w-8 h-8 bg-[url('/static/flags/R.png')] bg-cover rounded-sm border border-gray-300 shadow-sm hover:scale-105 hover:ring-2 ring-pink-300 transition duration-300"></a>
-        <a href="?lang=es" class="w-8 h-8 bg-[url('/static/flags/E.png')] bg-cover rounded-sm border border-gray-300 shadow-sm hover:scale-105 hover:ring-2 ring-pink-300 transition duration-300"></a>
-      </div>
-
-      <!-- Burger -->
-      <button class="md:hidden focus:outline-none" onclick="toggleMenu()">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-      </button>
-    </nav>
-
-    <!-- Mobile menu -->
-    <div id="mobileMenu" class="hidden bg-white shadow-md">
-      <ul class="flex flex-col items-center py-4 space-y-4">
-<!--        <li><a href="#shop" class="hover:text-pink-600 transition" onclick="toggleMenu()">{{ _('Shop') }}</a></li>-->
-        <li><a href="#services" class="hover:text-pink-600 transition" onclick="toggleMenu()">{{ _('Services') }}</a></li>
-        <li><a href="#about" class="hover:text-pink-600 transition" onclick="toggleMenu()">{{ _('Our Team') }}</a></li>
-        <li><a href="#gallery" class="hover:text-pink-600 transition" onclick="toggleMenu()">{{ _('Gallery') }}</a></li>
-        <li><a href="#contact" class="hover:text-pink-600 transition" onclick="toggleMenu()">{{ _('Contact') }}</a></li>
-      </ul>
-      <div class="flex justify-center space-x-4 mt-4 pb-4">
-        <a href="?lang=en" class="w-8 h-7 bg-[url('/static/flags/A.png')] bg-cover rounded-sm border border-gray-300 shadow-sm hover:scale-105 hover:ring-2 ring-pink-300 transition duration-300"></a>
-        <a href="?lang=ru" class="w-8 h-7 bg-[url('/static/flags/R.png')] bg-cover rounded-sm border border-gray-300 shadow-sm hover:scale-105 hover:ring-2 ring-pink-300 transition duration-300"></a>
-        <a href="?lang=es" class="w-8 h-7 bg-[url('/static/flags/E.png')] bg-cover rounded-sm border border-gray-300 shadow-sm hover:scale-105 hover:ring-2 ring-pink-300 transition duration-300"></a>
-      </div>
+    <!-- Language Switcher -->
+    <div class="hidden md:flex space-x-2 items-center">
+      <a
+        href="?lang=en"
+        class="w-8 h-8 bg-[url('/static/flags/A.png')] bg-cover rounded-sm border border-gray-300 shadow-sm hover:scale-105 hover:ring-2 ring-apple-blue hover:shadow-glow transition-all duration-300"
+      ></a>
+      <a
+        href="?lang=ru"
+        class="w-8 h-8 bg-[url('/static/flags/R.png')] bg-cover rounded-sm border border-gray-300 shadow-sm hover:scale-105 hover:ring-2 ring-apple-blue hover:shadow-glow transition-all duration-300"
+      ></a>
+      <a
+        href="?lang=es"
+        class="w-8 h-8 bg-[url('/static/flags/E.png')] bg-cover rounded-sm border border-gray-300 shadow-sm hover:scale-105 hover:ring-2 ring-apple-blue hover:shadow-glow transition-all duration-300"
+      ></a>
     </div>
-  </header>
+
+    <!-- Burger -->
+    <button
+      class="md:hidden focus:outline-none text-gray-400 hover:text-apple-blue transition-all duration-300"
+      onclick="toggleMenu()"
+    >
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div
+    id="mobileMenu"
+    class="hidden bg-gradient-to-b from-white/40 to-white/20 backdrop-blur-xl border-b border-white/20 shadow-lg transition-all duration-500 ease-out"
+    x-data="{ isOpen: false }"
+    x-bind:class="isOpen ? 'block opacity-100 translate-y-0' : 'hidden opacity-0 -translate-y-4'"
+  >
+    <ul class="flex flex-col items-center py-4 space-y-4">
+      <li>
+        <a
+          href="#services"
+          class="text-gray-400 hover:text-apple-blue hover:shadow-glow transition-all duration-300 px-3 py-2 rounded-lg"
+          onclick="toggleMenu()"
+        >
+          {{ _('Services') }}
+        </a>
+      </li>
+      <li>
+        <a
+          href="#about"
+          class="text-gray-400 hover:text-apple-blue hover:shadow-glow transition-all duration-300 px-3 py-2 rounded-lg"
+          onclick="toggleMenu()"
+        >
+          {{ _('Our Team') }}
+        </a>
+      </li>
+      <li>
+        <a
+          href="#gallery"
+          class="text-gray-400 hover:text-apple-blue hover:shadow-glow transition-all duration-300 px-3 py-2 rounded-lg"
+          onclick="toggleMenu()"
+        >
+          {{ _('Gallery') }}
+        </a>
+      </li>
+      <li>
+        <a
+          href="#contact"
+          class="text-gray-400 hover:text-apple-blue hover:shadow-glow transition-all duration-300 px-3 py-2 rounded-lg"
+          onclick="toggleMenu()"
+        >
+          {{ _('Contact') }}
+        </a>
+      </li>
+    </ul>
+    <div class="flex justify-center space-x-4 mt-4 pb-4">
+      <a
+        href="?lang=en"
+        class="w-8 h-7 bg-[url('/static/flags/A.png')] bg-cover rounded-sm border border-gray-300 shadow-sm hover:scale-105 hover:ring-2 ring-apple-blue hover:shadow-glow transition-all duration-300"
+      ></a>
+      <a
+        href="?lang=ru"
+        class="w-8 h-7 bg-[url('/static/flags/R.png')] bg-cover rounded-sm border border-gray-300 shadow-sm hover:scale-105 hover:ring-2 ring-apple-blue hover:shadow-glow transition-all duration-300"
+      ></a>
+      <a
+        href="?lang=es"
+        class="w-8 h-7 bg-[url('/static/flags/E.png')] bg-cover rounded-sm border border-gray-300 shadow-sm hover:scale-105 hover:ring-2 ring-apple-blue hover:shadow-glow transition-all duration-300"
+      ></a>
+    </div>
+  </div>
+</header>
 
   <!-- Main Content -->
   <main class="pt-20">
