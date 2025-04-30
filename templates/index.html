@@ -269,8 +269,7 @@
 <section
   id="gallery"
   class="bg-gradient-to-b from-white to-gray-50 py-16 px-4"
-  x-data="galleryModal()"
-  x-data="{ isVisible: false }"
+  x-data="{ isVisible: false, showModal: false, selectedCategoryName: '', selectedImages: [], galleryData: window.galleryData || {}, translatedGallery: window.translatedGallery || {} }"
   x-init="
     const observer = new IntersectionObserver((entries) => {
       if (entries[0].isIntersecting) {
@@ -291,6 +290,18 @@
       }
       lastTap = currentTime;
     });
+
+    // Функция для открытия категории
+    this.openCategory = function(name) {
+      this.selectedCategoryName = this.translatedGallery[name] || name;
+      this.selectedImages = this.galleryData[name];
+      this.showModal = true;
+    };
+
+    // Функция для открытия изображения на полный экран (если нужно)
+    this.openFullImage = function(imageSrc) {
+      // Логика для открытия изображения на полный экран
+    };
   "
 >
   <h2 class="text-4xl md:text-5xl font-bold text-center text-gray-800 uppercase tracking-wider mb-12">
@@ -559,30 +570,6 @@ html {
       openModal(id) {
         this.selectedMember = this.members.find(m => m.id === id);
         this.showModal = true;
-      }
-    }
-  }
-
-  function galleryModal() {
-    return {
-      showModal: false,
-      selectedCategoryName: '',
-      selectedImages: [],
-      galleryData: {
-        'category1': ['images_webp/int4.webp', 'images_webp/int3.webp'],
-        'category2': ['images/1.jpeg', 'images_webp/int5.webp']
-      },
-      translatedGallery: {
-        'category1': 'Category 1',
-        'category2': 'Category 2'
-      },
-      openCategory(name) {
-        this.selectedCategoryName = this.translatedGallery[name] || name;
-        this.selectedImages = this.galleryData[name];
-        this.showModal = true;
-      },
-      openFullImage(imageSrc) {
-        // Логика для открытия изображения на полный экран, если нужно
       }
     }
   }
