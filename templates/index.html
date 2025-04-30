@@ -211,38 +211,33 @@
         class="w-full text-left py-4 text-2xl font-normal flex justify-between items-center focus:outline-none"
         @click="open === '{{ category }}' ? open = null : open = '{{ category }}'"
       >
-        <span class="inline-flex">
-          <template x-if="open !== '{{ category }}'">
-            <span class="inline-flex">
-              {% for char in translated_categories.get(category, category) %}
-              <span class="inline-block" style="transform-style: preserve-3d;">{{ char }}</span>
-              {% endfor %}
-            </span>
-          </template>
-          <template x-if="open === '{{ category }}'">
-            <span class="inline-flex">
-              {% for char in translated_categories.get(category, category) %}
-              <span
-                class="inline-block animate-spin-char-{{ loop.index }}"
-                style="transform-style: preserve-3d;"
-                x-data="{ currentChar: '{{ char }}', targetChar: '{{ char }}', interval: null }"
-                x-init="
+        <span class="inline-flex space-x-0">
+          {% set chars = translated_categories.get(category, category) %}
+          {% for i in range(chars|length) %}
+            {% set char = chars[i] %}
+            <span
+              class="inline-block"
+              x-bind:class="open === '{{ category }}' ? 'animate-spin-char-{{ loop.index }}' : ''"
+              style="transform-style: preserve-3d;"
+              x-data="{ currentChar: '{{ char }}', targetChar: '{{ char }}', interval: null }"
+              x-init="
+                currentChar = '{{ char }}' === ' ' ? '\u00A0' : '{{ char }}';
+                if (open === '{{ category }}') {
                   let steps = 15;
                   interval = setInterval(() => {
                     if (steps > 0) {
-                      currentChar = getRandomChar();
+                      currentChar = '{{ char }}' === ' ' ? '\u00A0' : getRandomChar();
                       steps--;
                     } else {
-                      currentChar = targetChar;
+                      currentChar = '{{ char }}' === ' ' ? '\u00A0' : '{{ char }}';
                       clearInterval(interval);
                     }
                   }, 150);
-                "
-                x-text="currentChar"
-              ></span>
-              {% endfor %}
-            </span>
-          </template>
+                }
+              "
+              x-text="currentChar"
+            ></span>
+          {% endfor %}
         </span>
         <span
           class="transform transition-all duration-800 ease-[cubic-bezier(0.68,-0.6,0.32,1.6)] text-2xl"
@@ -291,8 +286,8 @@
   100% { transform: rotateX(2160deg); opacity: 1; }
 }
 .animate-spin-char-{{ i + 1 }} {
-  animation: spin-char-{{ i + 1 }} 2.5s ease-in-out;
-  animation-delay: {{ i * 150 }}ms;
+  animation: spin-char-{{ i + 1 }} 3.5s ease-in-out;
+  animation-delay: {{ i * 300 }}ms;
 }
 {% endfor %}
 
@@ -306,7 +301,6 @@
   animation: pulse-once 0.5s ease-in-out;
 }
 </style>
-
 <!-- Contact Section with Map and WhatsApp -->
 <section id="contact" class="bg-[#fefefe] py-20 px-6 text-gray-800 font-cantata">
   <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
