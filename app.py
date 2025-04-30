@@ -17,7 +17,20 @@ app.config['BABEL_DEFAULT_LOCALE'] = 'en'
 babel = Babel(app)
 # port = int(os.environ.get("PORT", 8000))
 
+
+
+app.config['SESSION_COOKIE_SECURE'] = True      # Только через HTTPS
+app.config['SESSION_COOKIE_HTTPONLY'] = True    # Недоступна из JS
+app.config['SESSION_COOKIE_SAMESITE'] = 'Lax'   # Защита от CSRF
+
+
 LANGUAGES = ['en', 'ru', 'es']
+
+@app.after_request
+def disable_etag(response):
+    response.headers.pop('ETag', None)
+    return response
+
 
 @babel.localeselector
 def get_locale():
@@ -47,6 +60,8 @@ class BookingForm(FlaskForm):
 
 @app.route('/')
 def index():
+    session.permanent = True
+
     form = BookingForm()
     df = pd.read_excel('static/data/fin33.xlsx')
     services = {}
