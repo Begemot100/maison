@@ -73,13 +73,13 @@ def index():
 
     # ⬇️ Перемести вот эти блоки сюда, вне цикла
     translated_gallery = {
-        'Manicure': 'Маникюр',
-        'Pedicure': 'Педикюр',
-        'Lashes': 'Ресницы',
-        'Hair': 'Волосы',
-        'Brows': 'Брови',
-        'Clients': 'Клиенты',
-        'Endosphera': 'Эндосфера'
+        'Manicure': 'Manicura',
+        'Pedicure': 'Pedicura',
+        'Lashes': 'Pestañas',
+        'Hair': 'Pelo',
+        'Brows': 'Cejas',
+        'Clients': 'Clientes',
+        'Endosphera': 'Endospheres'
     }
 
     translated_services = {
