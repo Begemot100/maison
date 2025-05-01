@@ -23,9 +23,20 @@
     <div class="col-span-7 pl-4">
       <img
         src="{{ url_for('static', filename='images_webp/int1.webp') }}"
+        srcset="
+          {{ url_for('static', filename='images_webp/int1-400.webp') }} 400w,
+          {{ url_for('static', filename='images_webp/int1-800.webp') }} 800w,
+          {{ url_for('static', filename='images_webp/int1-1200.webp') }} 1200w
+        "
+        sizes="(max-width: 640px) 100vw, 640px"
+        width="640"
+        height="400"
         alt="Maison Beauty Interior"
-        class="rounded-xl shadow-xl h-[600px] object-cover w-full transition-transform duration-500 hover:scale-100"
-      >
+        class="rounded-xl shadow-md w-full h-64 object-cover transition-transform duration-300"
+        loading="eager"
+        decoding="async"
+      />
+
     </div>
     <div class="col-span-5 pr-16 flex flex-col justify-center items-end text-right">
       <h2 class="text-4xl md:text-5xl font-bold text-center text-gray-800 uppercase tracking-wider mb-12">
@@ -284,7 +295,7 @@
 <!-- Gallery Section -->
 <section
   id="gallery"
-  class="bg-gradient-to-b from-white to-gray-50 py-16 px-4"
+  class="gallery-section bg-gradient-to-b from-white to-gray-50 py-16 px-4"
   x-data="galleryModal()"
   x-init="
     console.log('Gallery section initialized');
@@ -306,7 +317,7 @@
     <div class="flex space-x-6 snap-x scroll-smooth px-2 md:px-8">
       <template x-for="(images, name) in galleryData" :key="name">
         <div
-          class="relative w-[260px] h-[420px] flex-shrink-0 cursor-pointer overflow-hidden rounded-xl transition-transform duration-500 hover:scale-105 hover:shadow-glow"
+          class="relative w-[260px] h-[420px] flex-shrink-0 cursor-pointer overflow-hidden rounded-xl transition-transform duration-500 hover:scale-100 hover:shadow-glow"
           @click="openCategory(name)"
         >
           <img
@@ -344,7 +355,7 @@
     @touchstart="handleDoubleTap()"
     x-cloak
   >
-    <div class="bg-glass backdrop-blur-md bg-white/30 p-8 rounded-xl max-w-6xl w-[80%] relative shadow-xl overflow-y-auto max-h-[95vh]" @click.stop>
+    <div class="bg-glass backdrop-blur-md bg-white/30 p-8 rounded-xl max-w-6xl w-[60%] relative shadow-xl overflow-y-auto max-h-[95vh]" @click.stop>
       <h3 class="text-2xl font-bold text-center mb-4 text-white" x-text="selectedCategoryName"></h3>
       <div class="columns-1 sm:columns-2 md:columns-3 gap-4 space-y-4">
         <template x-for="img in selectedImages" :key="img">
