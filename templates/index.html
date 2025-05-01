@@ -111,7 +111,7 @@
       </a>
   </div>
   <div class="mt-10 grid grid-cols-2 gap-4">
-    {% for img in ['images/1.jpeg', 'images_webp/int3.webp', 'images_webp/int4.webp', 'images_webp/int5.webp'] %}
+    {% for img in ['images_webp/1.webp', 'images_webp/int3.webp', 'images_webp/int4.webp', 'images_webp/int5.webp'] %}
     <img
       src="{{ url_for('static', filename=img) }}"
       alt="Gallery"
@@ -206,7 +206,7 @@
     <div class="flex space-x-6 snap-x scroll-smooth px-2 md:px-8">
       {% for member in team_members %}
       <div
-        class="relative w-[260px] h-[420px] flex-shrink-0 cursor-pointer overflow-hidden rounded-xl bg-white shadow-md transition-transform duration-500 hover:scale-105 hover:shadow-glow"
+        class="relative w-[360px] h-[360px] flex-shrink-0 cursor-pointer overflow-hidden rounded-xl bg-white shadow-md transition-transform duration-500 hover:scale-100 hover:shadow-glow"
         @click="openModal({{ member.id }})"
       >
         <img
@@ -215,8 +215,8 @@
           class="object-cover w-full h-full transform transition duration-300"
         >
         <div class="absolute inset-0 bg-black bg-opacity-30 flex flex-col justify-end items-center p-4">
-          <h3 class="text-white text-lg font-semibold text-center">{{ member.name }}</h3>
-          <p class="text-white text-sm text-center">{{ _(member.position) }}</p>
+          <h3 class="text-gray-300 text-lg font-semibold text-center">{{ member.name }}</h3>
+          <p class="text-gray-300 text-lg text-center">{{ _(member.position) }}</p>
         </div>
       </div>
       {% endfor %}
@@ -344,7 +344,7 @@
     @touchstart="handleDoubleTap()"
     x-cloak
   >
-    <div class="bg-glass backdrop-blur-md bg-white/30 p-8 rounded-xl max-w-6xl w-[60%] relative shadow-xl overflow-y-auto max-h-[95vh]" @click.stop>
+    <div class="bg-glass backdrop-blur-md bg-white/30 p-8 rounded-xl max-w-6xl w-[100%] relative shadow-xl overflow-y-auto max-h-[95vh]" @click.stop>
       <h3 class="text-2xl font-bold text-center mb-4 text-white" x-text="selectedCategoryName"></h3>
       <div class="columns-1 sm:columns-2 md:columns-3 gap-4 space-y-4">
         <template x-for="img in selectedImages" :key="img">

@@ -1,6 +1,6 @@
 /* ==== GLASS BUTTON CONTAINER ==== */
 .btn-slice {
-
+  contain: content;
   border: 2px solid #000;
 
 }
