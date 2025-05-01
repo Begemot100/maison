@@ -325,6 +325,17 @@
 <!--/-->
   <!-- Modal | Gallery -->
   <div
+          x-data="{
+    lastTap: 0,
+    handleTap() {
+      const now = Date.now()
+      if (now - this.lastTap < 300) {
+        this.open = null
+      }
+      this.lastTap = now
+    }
+  }"
+  @click="handleTap()"
     class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-90 z-50 px-4"
     x-show="showModal"
     x-transition
