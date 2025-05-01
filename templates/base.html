@@ -10,7 +10,7 @@
 
 
   <!-- Fonts -->
-<!--  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">-->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="preload" href="/styles.css" as="style" onload="this.onload=null;this.rel='stylesheet';">
     <noscript><link rel="stylesheet" href="/styles.css"></noscript>
 
@@ -46,19 +46,79 @@
       <div class="text-2xl font-playfair font-medium text-gray-500 uppercase">Maison Beauty Space</div>
 
       <ul class="hidden md:flex space-x-6">
-<!--        <li><a href="#shop" class="hover:text-pink-600 transition">{{ _('Shop') }}</a></li>-->
-        <li><a href="#services" class="hover:text-pink-600 transition">{{ _('Services') }}</a></li>
-        <li><a href="#about" class="hover:text-pink-600 transition">{{ _('Our Team') }}</a></li>
-        <li><a href="#gallery" class="hover:text-pink-600 transition">{{ _('Gallery') }}</a></li>
-        <li><a href="#contact" class="hover:text-pink-600 transition">{{ _('Contact') }}</a></li>
-      </ul>
+  <li>
+    <a
+      href="#services"
+      class="bg-glass backdrop-blur-md bg-white/30 text-gray-800 px-5 py-3 rounded-lg text-lg transition-all duration-300 hover:shadow-glow hover:text-apple-blue"
+    >
+      {{ _('Services') }}
+    </a>
+  </li>
+  <li>
+    <a
+      href="#about"
+      class="bg-glass backdrop-blur-md bg-white/30 text-gray-800 px-5 py-3 rounded-lg text-lg transition-all duration-300 hover:shadow-glow hover:text-apple-blue"
+    >
+      {{ _('Our Team') }}
+    </a>
+  </li>
+  <li>
+    <a
+      href="#gallery"
+      class="bg-glass backdrop-blur-md bg-white/30 text-gray-800 px-5 py-3 rounded-lg text-lg transition-all duration-300 hover:shadow-glow hover:text-apple-blue"
+    >
+      {{ _('Gallery') }}
+    </a>
+  </li>
+  <li>
+    <a
+      href="#contact"
+      class="bg-glass backdrop-blur-md bg-white/30 text-gray-800 px-5 py-3 rounded-lg text-lg transition-all duration-300 hover:shadow-glow hover:text-apple-blue"
+    >
+      {{ _('Contact') }}
+    </a>
+  </li>
+</ul>
 
-      <!-- Language Switcher -->
-      <div class="hidden md:flex space-x-2 items-center">
-        <a href="?lang=en" class="w-8 h-8 bg-[url('/static/flags/A.png')] bg-cover rounded-sm border border-gray-300 shadow-sm hover:scale-105 hover:ring-2 ring-pink-300 transition duration-300"></a>
-        <a href="?lang=ru" class="w-8 h-8 bg-[url('/static/flags/R.png')] bg-cover rounded-sm border border-gray-300 shadow-sm hover:scale-105 hover:ring-2 ring-pink-300 transition duration-300"></a>
-        <a href="?lang=es" class="w-8 h-8 bg-[url('/static/flags/E.png')] bg-cover rounded-sm border border-gray-300 shadow-sm hover:scale-105 hover:ring-2 ring-pink-300 transition duration-300"></a>
-      </div>
+
+              <!-- Language Switcher -->
+             <div class="hidden md:flex space-x-2 items-center">
+          <!-- EN -->
+          <a
+            href="?lang=en"
+            class="bg-glass backdrop-blur-md bg-white/30 w-10 h-10 rounded-lg overflow-hidden flex-shrink-0 transition-all duration-300 hover:scale-110 hover:shadow-[0_0_12px_16px_rgba(255,255,255,0.8)] hover:ring-5 ring-white/90"
+          >
+            <img
+              src="{{ url_for('static', filename='flags/A.png') }}"
+              alt="EN"
+              class="w-full h-full object-cover"
+            />
+          </a>
+
+  <!-- RU -->
+          <a
+            href="?lang=ru"
+            class="bg-glass backdrop-blur-md bg-white/30 w-10 h-10 rounded-lg overflow-hidden flex-shrink-0 transition-all duration-300 hover:scale-110 hover:shadow-[0_0_12px_16px_rgba(255,255,255,0.8)] hover:ring-5 ring-white/90"
+          >
+            <img
+              src="{{ url_for('static', filename='flags/R.png') }}"
+              alt="RU"
+              class="w-full h-full object-cover"
+            />
+          </a>
+
+          <!-- ES -->
+          <a
+            href="?lang=es"
+            class="bg-glass backdrop-blur-md bg-white/30 w-10 h-10 rounded-lg overflow-hidden flex-shrink-0 transition-all duration-300 hover:scale-110 hover:shadow-[0_0_12px_16px_rgba(255,255,255,0.8)] hover:ring-5 ring-white/90"
+          >
+            <img
+              src="{{ url_for('static', filename='flags/E.png') }}"
+              alt="ES"
+              class="w-full h-full object-cover"
+            />
+          </a>
+        </div>
 
       <!-- Burger -->
       <button class="md:hidden focus:outline-none" onclick="toggleMenu()">

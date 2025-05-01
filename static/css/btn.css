@@ -1,40 +1,70 @@
+/* ==== GLASS BUTTON CONTAINER ==== */
 .btn-slice {
-  padding: 0.75rem 2rem;
-  border: 2px solid #000;
-  position: relative;
-  color: #000;
-  text-transform: uppercase;
-  font-weight: bold;
-  overflow: hidden;
-  transition: all 0.5s ease-in-out;
+
+
 }
 
-.btn-slice .top,
-.btn-slice .bottom {
-  content: '';
+
+/* ==== СЛАЙСЫ С ТЕКСТОМ ==== */
+.btn-slice .slice {
   position: absolute;
+    background: #fdf1f3;
+
   left: 0;
   width: 100%;
-  height: 4px;
-  background: #000;
-  transform: translateX(-100%);
-  transition: transform 0.5s ease;
-}
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-.btn-slice .top {
+  /* текст */
+  font-family: 'Fjalla One', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 1rem;
+  background: #fdf1f3;
+
+  /* нужен для анимации */
+  transition: transform 0.5s ease;
+  z-index: 1;
+}
+/* обрезаем верхнюю половину */
+.btn-slice .slice-top {
+  clip-path: inset(0 0 50% 0);
   top: 0;
 }
-
-.btn-slice .bottom {
+/* и нижнюю */
+.btn-slice .slice-bottom {
+  clip-path: inset(50% 0 0 0);
   bottom: 0;
 }
 
-.btn-slice:hover .top,
-.btn-slice:hover .bottom {
-  transform: translateX(0);
+/* ==== РЕЖУЩАЯ ПОЛОСА ==== */
+.btn-slice::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -100%;
+  width: 100%;
+  height: 4px;
+  background: #fdf1f3;
+  transform: translateY(-50%) translateX(0);
+  transition: transform 0.5s ease;
+  z-index: 2;
 }
 
+/* ==== HOVER-ЭФФЕКТ ==== */
+.btn-slice:hover .slice-top {
+  transform: translateY(-50%);
+}
+.btn-slice:hover .slice-bottom {
+  transform: translateY(50%);
+}
+.btn-slice:hover::before {
+  transform: translateY(-50%) translateX(300%);
+}
+/* усилим glow */
 .btn-slice:hover {
-  background: #000;
-  color: #fff;
+  box-shadow: 0 0 20px rgba(255,255,255,0.9);
 }

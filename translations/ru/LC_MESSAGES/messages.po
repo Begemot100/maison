@@ -19,7 +19,7 @@ msgid "Contact"
 msgstr "Контакты"
 
 msgid "Book Now"
-msgstr "Записаться"
+msgstr "ЗАПИСАТЬСЯ"
 
 msgid "Full Name"
 msgstr "Имя и фамилия"

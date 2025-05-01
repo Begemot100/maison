@@ -19,7 +19,7 @@ msgid "Contact"
 msgstr "Contacto"
 
 msgid "Book Now"
-msgstr "Reservar"
+msgstr "RESERVAR"
 
 msgid "Full Name"
 msgstr "Nombre completo"

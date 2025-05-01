@@ -148,3 +148,20 @@
         transform: translateY(0);
     }
 }
+/* Фон-оверлей под модалкой */
+.modal-overlay {
+  position: fixed;
+  inset: 0;               /* top/right/bottom/left = 0 */
+  background: rgba(0,0,0,0.5);
+  z-index: 1000;
+}
+
+/* Само окно поверх оверлея */
+.modal-window {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* другие стили: фон, паддинги и т.п. */
+  z-index: 1010;
+}
